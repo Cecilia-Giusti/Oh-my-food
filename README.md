@@ -1,4 +1,4 @@
 
-Ajout du header 
+Ajout du footer 
 
-Version: 2
+Version: 3
