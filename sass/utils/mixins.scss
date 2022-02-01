@@ -1,0 +1,7 @@
+// Mixins de placement 
+
+@mixin center_flexbox {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+}
