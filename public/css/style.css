@@ -1,3 +1,14 @@
-
+/*Variables des polices */
+/*Police des titres */
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+/*Police du texte */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+header {
+  width: 100%;
+  display: flex;
+}
+header h1 {
+  font-family: "Shrikhand", sans-serif;
+}
 
 /*# sourceMappingURL=style.css.map */
