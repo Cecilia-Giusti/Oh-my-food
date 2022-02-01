@@ -1,0 +1,27 @@
+header {
+    width:90%;
+    height: 50px;
+    margin:auto;
+    box-sizing: border-box;
+    @include center_flexbox;
+
+    h1 {
+        @include title_font;
+        @include center_flexbox;
+        flex-grow:1;
+    }
+    a {
+            color: $font_color;
+            
+        }
+        
+    i {
+        visibility: hidden;
+        
+        &.visible {
+            visibility: visible;
+        }
+    }
+
+    
+}
