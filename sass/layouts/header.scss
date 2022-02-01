@@ -1,3 +1,6 @@
+
+@media all{
+
 header {
     width:90%;
     height: 50px;
@@ -11,7 +14,7 @@ header {
         flex-grow:1;
     }
     a {
-            color: $font_color;
+        color: $dark_color;
             
         }
         
@@ -24,4 +27,6 @@ header {
     }
 
     
+}
+
 }
