@@ -1,0 +1,16 @@
+
+/*Police des titres */
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+@mixin title_font {
+    font-family: $title_font, sans-serif;
+}
+
+/*Police du texte */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+@mixin text_font {
+    font-family: $text_font, sans-serif;
+}
