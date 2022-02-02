@@ -6,11 +6,11 @@ header {
     height: 50px;
     margin:auto;
     box-sizing: border-box;
-    @include center_flexbox;
+    @include flexbox;
 
     h1 {
         @include title_font;
-        @include center_flexbox;
+        @include flexbox;
         flex-grow:1;
     }
     a {

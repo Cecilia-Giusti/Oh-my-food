@@ -3,20 +3,25 @@
 $title_font : "Shrikhand";
 $text_font : "Roboto";
 
-// Couleurs principales
 
-$primary_color: rgb(147, 86, 220);
-$secondary_color: rgb(255, 121, 218);
-$tertiary_color:rgb(153, 226, 208);
+//Couleurs 
 
-// Couleurs secondaires 
+    // Couleurs principales
 
-$dark_color :rgb(0, 0, 0);
-$light_color : rgb(255, 255, 255);
-$background_color_footer : rgb(53, 53, 53);
-$background_color_medium : rgb(234, 234, 234);
-$background_color_light : rgb(246, 246, 246);
+    $primary_color: rgb(147, 86, 220);
+    $secondary_color: rgb(255, 121, 218);
+    $tertiary_color:rgb(153, 226, 208);
 
-// Degradé 
-$gradient :linear-gradient(170deg, $secondary_color 0%, $primary_color 100%);
-$gradient_light :linear-gradient(170deg, lighten($secondary_color, 10%) 0%, lighten($primary_color, 10%) 100%);
+    // Couleurs secondaires 
+
+    $dark_color :rgb(0, 0, 0);
+    $light_color : rgb(255, 255, 255);
+    $background_color_footer : rgb(53, 53, 53);
+    $background_color_medium : rgb(234, 234, 234);
+    $background_color_light : rgb(246, 246, 246);
+    $icon_color : rgb(126, 126, 126);
+
+    // Degradé 
+    $gradient :linear-gradient(170deg, $secondary_color 0%, $primary_color 100%);
+    $gradient_light :linear-gradient(170deg, lighten($secondary_color, 5%) 0%, lighten($primary_color, 5%) 100%);
+

@@ -6,7 +6,7 @@
 
 .location {
     background-color: $background_color_medium;
-    @include center_flexbox;
+    @include flexbox;
     gap:10px;
     font-weight: 500;
 
@@ -23,10 +23,10 @@
     padding: 40px 0 40px 0;
 
     h2 {
+        margin:auto;
         margin-top:0;
         width:80%;
-        margin:auto;
-        font-weight : 800;
+        @include font;
     }
 
     p {
@@ -37,3 +37,87 @@
 }
 
 /*Fonctionnement */
+
+aside {
+    width:90%;
+    margin:auto;
+
+    h3 {
+        @include font ($font-size:1.4em);
+    }
+}
+
+.list {
+    @include flexbox($flex-direction:column);
+    gap: 20px;
+    margin:auto;
+    margin-bottom:40px;
+    padding: 0px;
+    list-style: none;
+    width:80%;
+    max-width: 300px;
+
+    &__item {
+        height: 25px;
+        width:100%;
+        @include flexbox($justify-content:flex-start);
+        gap:20px;
+        background-color: $background_color_light;
+        padding:20px 18px 20px 18px;
+        border-radius: 15px;
+        box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+        @include font($font-size:0.9em, $font-weight:500);
+        position :relative;
+        z-index: 1;
+
+        &:hover {// Transition au survol 
+            i {
+                color:$primary_color;
+            }
+
+            &::after{
+                opacity:1;
+            }
+        }
+
+        &::after {
+            content:"";
+            opacity:0;
+            background-color:lighten($primary_color,35%);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            transition: opacity 250ms;
+            border-radius: 15px;
+            box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+        }
+
+        &--circle{
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 0.8em;
+            background-color: $primary_color;
+            color:$light_color;
+            @include flexbox;
+            position:absolute;
+            top:22px;
+            left:-10px;
+        }
+
+        i {
+            font-size: 16px;
+            text-align: center;
+            padding-left:10px;
+            color:$icon_color;
+        }
+
+        
+    }
+}
+
+
+    
