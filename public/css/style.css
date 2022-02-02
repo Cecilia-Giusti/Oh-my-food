@@ -1,7 +1,36 @@
+@charset "UTF-8";
 /*Police des titres */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /*Police du texte */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+/*Bouton principal */
+.btn__main {
+  color: white;
+  background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
+  box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.26);
+  border-radius: 50px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  padding: 18px;
+  position: relative;
+  z-index: 1;
+}
+.btn__main:hover .btn__main--bg {
+  opacity: 1;
+}
+.btn__main--bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(170deg, #fface8 0%, #ae80e5 100%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 250ms;
+  border-radius: 50px;
+}
+
 @media all {
   header {
     width: 90%;
@@ -20,7 +49,7 @@
     flex-grow: 1;
   }
   header a {
-    color: #000;
+    color: black;
   }
   header i {
     visibility: hidden;
@@ -35,7 +64,7 @@ body {
   box-sizing: border-box;
   margin: 0px;
   font-family: "Roboto", sans-serif;
-  color: #000;
+  color: black;
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +80,7 @@ body {
     box-sizing: border-box;
   }
   footer h5 {
-    color: #fff;
+    color: white;
     font-family: "Shrikhand", sans-serif;
     font-weight: normal;
     margin: 20px 0 0 20px;
@@ -65,7 +94,7 @@ body {
     list-style-type: none;
   }
   footer a {
-    color: #fff;
+    color: white;
     text-decoration: none;
   }
   footer a i {
@@ -83,5 +112,38 @@ body {
     margin: 0;
   }
 }
+/*Page d'accueil */
+/*Premiere section  */
+/*Localisation */
+.location {
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+.location p {
+  margin: 15px 0 15px 0;
+}
+
+/*Présentation */
+.art__presentation {
+  background-color: #f6f6f6;
+  text-align: center;
+  padding: 40px 0 40px 0;
+}
+.art__presentation h2 {
+  margin-top: 0;
+  width: 80%;
+  margin: auto;
+  font-weight: 800;
+}
+.art__presentation p {
+  color: #353535;
+  margin-bottom: 30px;
+}
+
+/*Fonctionnement */
 
 /*# sourceMappingURL=style.css.map */

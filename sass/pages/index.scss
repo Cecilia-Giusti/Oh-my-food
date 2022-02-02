@@ -1,0 +1,39 @@
+/*Page d'accueil */
+
+/*Premiere section  */
+
+/*Localisation */
+
+.location {
+    background-color: $background_color_medium;
+    @include center_flexbox;
+    gap:10px;
+    font-weight: 500;
+
+    p {
+        margin: 15px 0 15px 0;
+    }
+}
+
+/*Présentation */
+
+.art__presentation {
+    background-color: $background_color_light;
+    text-align: center;
+    padding: 40px 0 40px 0;
+
+    h2 {
+        margin-top:0;
+        width:80%;
+        margin:auto;
+        font-weight : 800;
+    }
+
+    p {
+        color: $background_color_footer;
+        margin-bottom:30px;
+    }
+
+}
+
+/*Fonctionnement */
