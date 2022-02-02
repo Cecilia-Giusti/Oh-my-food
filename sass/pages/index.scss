@@ -2,6 +2,11 @@
 
 /*Premiere section  */
 
+.section__primary{
+    @include flexbox($flex-direction:column);
+    width:100%;
+}
+
 /*Localisation */
 
 .location {
@@ -9,6 +14,7 @@
     @include flexbox;
     gap:10px;
     font-weight: 500;
+    width:100%;
 
     p {
         margin: 15px 0 15px 0;
@@ -18,6 +24,7 @@
 /*Présentation */
 
 .art__presentation {
+    width:100%;
     background-color: $background_color_light;
     text-align: center;
     padding: 40px 0 40px 0;
@@ -37,7 +44,7 @@
 }
 
 /*Fonctionnement */
-
+@media all {
 aside {
     width:90%;
     margin:auto;
@@ -47,6 +54,8 @@ aside {
     }
 }
 
+/*Etapes du fonctionnement du site*/
+
 .list {
     @include flexbox($flex-direction:column);
     gap: 20px;
@@ -55,11 +64,12 @@ aside {
     padding: 0px;
     list-style: none;
     width:80%;
-    max-width: 300px;
+    
 
-    &__item {
+    &__item { //items de la liste
         height: 25px;
         width:100%;
+        max-width: 250px;
         @include flexbox($justify-content:flex-start);
         gap:20px;
         background-color: $background_color_light;
@@ -95,7 +105,7 @@ aside {
             box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
         }
 
-        &--circle{
+        &--circle{ //cercle autour des chiffres
             width: 22px;
             height: 22px;
             border-radius: 50%;
@@ -119,5 +129,44 @@ aside {
     }
 }
 
+}
 
-    
+@media (min-width: 500px) {
+
+.list {
+    width: 100%;
+    @include flexbox ($justify-content:space-around, $flex-direction:row);
+    flex-wrap: wrap;
+}
+}
+
+@media (min-width: 1000px) {
+.section__primary {
+    @include flexbox ($flex-direction:row);
+    flex-wrap : wrap;
+
+    .location {
+        order: 2;
+        width:30%;
+        margin-left:10%;
+        border-radius: 30px;
+        box-shadow: inset 2px 5px 6px rgba(0, 0, 0, 0.13);
+    }
+
+    aside {
+        order:3;
+        width:40%;
+
+        h3 {
+            text-align: center;
+        }
+    }
+
+    .list {
+        width: 100%;
+        @include flexbox($flex-direction:column);
+        flex-wrap: nowrap;
+        
+    }
+}
+}
