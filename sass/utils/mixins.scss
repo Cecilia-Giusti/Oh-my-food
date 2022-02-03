@@ -1,7 +1,13 @@
 // Mixins de placement 
 
-@mixin center_flexbox {
+@mixin flexbox ($justify-content: center, $align-items: center, $flex-direction: row){
     display : flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+
+@mixin font($font-size:1.5em, $font-weight:800) {
+    font-size: $font-size;
+    font-weight : $font-weight;
 }
