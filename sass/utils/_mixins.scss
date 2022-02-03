@@ -7,7 +7,8 @@
     flex-direction: $flex-direction;
 }
 
-@mixin font($font-size:1.5em, $font-weight:800) {
+@mixin font($font-size:1.5em, $font-weight:900, $font-family:$text-font) {
     font-size: $font-size;
     font-weight : $font-weight;
+    font-family : $font-family, sans-serif;
 }
