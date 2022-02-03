@@ -171,12 +171,14 @@ aside {
 }
 }
 
+@media all {
+
 /* Section des restaurants */
 
 .section__restaurants {
     width: 100%;
     background-color: $background_color_light;
-    padding-top:40px;
+    padding:40px 0px 40px;
     h3 {
         @include font;
         margin-left:5%;
@@ -192,6 +194,7 @@ aside {
 
 .art {
     width:90%;
+    max-width: 350px;
     margin:auto;
     background-color: $light_color;
     border-radius : 20px 20px 20px 20px;
@@ -212,7 +215,7 @@ aside {
     
         img {
             width:100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
     }
@@ -250,6 +253,58 @@ aside {
     }
 
 
+}
+
+}
+
+@media (min-width: 500px) {
+
+.section__restaurants{
+    
+
+    &--flex{
+    @include flexbox;
+    flex-wrap:wrap;
+    
+    }
+
+    h3 {
+        text-align: center;
+        margin-left:0;
+    }
+}
+
+.art {
+    margin:0;
+
+    &__new {
+        @include font($font-size:1.2em);
+        right:15px;
+    }
+}
+
+}
+
+@media (min-width: 1000px) {
+    .section__restaurants{
+       
+        &--flex {
+            width:90%;
+            gap:30px;
+            margin:auto;
+    
+        }
+    }
+
+    .art {
+        width:100%;
+        max-width: 400px;
+
+        &__img {
+            height: 200px;
+        }
+
+    }
 }
 
 
