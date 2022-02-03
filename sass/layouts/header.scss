@@ -2,10 +2,12 @@
 @media all{
 
 header {
-    width:90%;
+    width:100%;
     height: 50px;
     margin:auto;
     box-sizing: border-box;
+    box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.247);
+    margin-bottom:20px;
     @include center_flexbox;
 
     h1 {
