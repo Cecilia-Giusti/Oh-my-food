@@ -4,7 +4,7 @@
 
 .section__primary{
     @include flexbox($flex-direction:column);
-    width:100%;
+    width:$tall_dimension;
 }
 
 /*Localisation */
@@ -14,7 +14,7 @@
     @include flexbox;
     gap:10px;
     @include font($font-size:1em, $font-weight:600);
-    width:100%;
+    width:$tall_dimension;
 
     p {
         margin: 15px 0 15px 0;
@@ -24,7 +24,7 @@
 /*Présentation */
 
 .art__presentation {
-    width:100%;
+    width:$tall_dimension;
     background-color: $background_color_light;
     text-align: center;
     padding: 40px 0 40px 0;
@@ -32,13 +32,16 @@
     h2 {
         margin:auto;
         margin-top:0;
-        width:80%;
-        @include font;
+        width:70%;
+        @include font($font-size: 1.3em, $font-weight:900);
     }
 
     p {
         color: $background_color_footer;
-        margin-bottom:30px;
+        width:80%;
+        margin:auto;
+        padding:20px 0 30px 0;
+        
     }
 
 }
@@ -68,7 +71,7 @@ aside {
 
     &__item { //items de la liste
         height: 25px;
-        width:100%;
+        width:$tall_dimension;
         max-width: 250px;
         @include flexbox($justify-content:flex-start);
         gap:20px;
@@ -134,7 +137,7 @@ aside {
 @media (min-width: 500px) {
 
 .list {
-    width: 100%;
+    width: $tall_dimension;
     @include flexbox ($justify-content:space-around, $flex-direction:row);
     flex-wrap: wrap;
 }
@@ -163,7 +166,7 @@ aside {
     }
 
     .list {
-        width: 100%;
+        width: $tall_dimension;
         @include flexbox($flex-direction:column);
         flex-wrap: nowrap;
         
@@ -176,7 +179,7 @@ aside {
 /* Section des restaurants */
 
 .section__restaurants {
-    width: 100%;
+    width: $tall_dimension;
     background-color: $background_color_light;
     padding:40px 0px 40px;
     h3 {
@@ -214,7 +217,7 @@ aside {
         height: 150px;
     
         img {
-            width:100%;
+            width:$tall_dimension;
             object-fit: contain;
         }
 
@@ -236,7 +239,7 @@ aside {
         padding: 10px 15px 20px 15px;
 
         h4 {
-            @include font ($font-size:1.2em, $font-weight:800);
+            @include font ($font-size:1em, $font-weight:900);
             margin:0;
         }
 
@@ -244,10 +247,6 @@ aside {
             margin:5px 0px 0px 0px;
         }
 
-        i {
-            @include font($font-weight:100);
-            
-        }
 
 
     }
@@ -297,7 +296,7 @@ aside {
     }
 
     .art {
-        width:100%;
+        width:$tall_dimension;
         max-width: 400px;
 
         &__img {

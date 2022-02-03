@@ -25,3 +25,7 @@ $text_font : "Roboto";
     $gradient :linear-gradient(170deg, $secondary_color 0%, $primary_color 100%);
     $gradient_light :linear-gradient(170deg, lighten($secondary_color, 5%) 0%, lighten($primary_color, 5%) 100%);
 
+// Dimensions
+
+$tall_dimension : 100%;
+

@@ -2,10 +2,10 @@
 
 @media all {
     body {
-    width:100%;
+    width:$tall_dimension;
     box-sizing: border-box;
     margin : 0px;
-    @include text_font;
+    font-family: $text_font;
     color: $dark_color;
     display :flex;
     flex-direction: column;
