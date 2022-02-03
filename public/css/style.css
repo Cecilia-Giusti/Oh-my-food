@@ -2,7 +2,7 @@
 /*Police des titres */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 /*Police du texte */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
 /*Bouton principal */
 .btn__main {
   color: white;
@@ -143,7 +143,8 @@
   align-items: center;
   flex-direction: row;
   gap: 10px;
-  font-weight: 500;
+  font-size: 1em;
+  font-weight: 600;
   width: 100%;
 }
 .location p {
@@ -293,6 +294,81 @@
     flex-direction: column;
     flex-wrap: nowrap;
   }
+}
+/* Section des restaurants */
+.section__restaurants {
+  width: 100%;
+  background-color: #f6f6f6;
+  padding-top: 40px;
+}
+.section__restaurants h3 {
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-left: 5%;
+}
+.section__restaurants--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cartes des restaurants */
+.art {
+  width: 90%;
+  margin: auto;
+  background-color: white;
+  border-radius: 20px 20px 20px 20px;
+  position: relative;
+  box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+}
+.art a {
+  text-decoration: none;
+  color: black;
+}
+.art__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 20px 20px 0px 0px;
+  overflow: hidden;
+  height: 150px;
+}
+.art__img img {
+  width: 100%;
+  object-fit: cover;
+}
+.art__new {
+  background-color: #99e2d0;
+  color: #278870;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 8px 10px 8px 10px;
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+.art__body {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px 15px 20px 15px;
+}
+.art__body h4 {
+  font-size: 1.2em;
+  font-weight: 800;
+  margin: 0;
+}
+.art__body p {
+  margin: 5px 0px 0px 0px;
+}
+.art__body i {
+  font-size: 1.5em;
+  font-weight: 100;
 }
 
 /*# sourceMappingURL=style.css.map */

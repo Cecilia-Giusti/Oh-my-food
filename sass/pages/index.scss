@@ -13,7 +13,7 @@
     background-color: $background_color_medium;
     @include flexbox;
     gap:10px;
-    font-weight: 500;
+    @include font($font-size:1em, $font-weight:600);
     width:100%;
 
     p {
@@ -170,3 +170,86 @@ aside {
     }
 }
 }
+
+/* Section des restaurants */
+
+.section__restaurants {
+    width: 100%;
+    background-color: $background_color_light;
+    padding-top:40px;
+    h3 {
+        @include font;
+        margin-left:5%;
+    }
+
+    &--flex {
+        @include flexbox($flex-direction:column);
+        gap:20px;
+    }
+}
+
+/* Cartes des restaurants */
+
+.art {
+    width:90%;
+    margin:auto;
+    background-color: $light_color;
+    border-radius : 20px 20px 20px 20px;
+    position:relative;
+    box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+
+    a{
+        text-decoration: none;
+        color: $dark_color;
+    }
+
+    
+    &__img {
+        @include flexbox;
+        border-radius : 20px 20px 0px 0px;
+        overflow: hidden;
+        height: 150px;
+    
+        img {
+            width:100%;
+            object-fit: cover;
+        }
+
+    }
+
+    &__new {
+        background-color: $tertiary_color;
+        color: darken($tertiary_color, 40%);
+        @include font($font-size:0.8em, $font-weight: 600);
+        padding:8px 10px 8px 10px;
+        position:absolute;
+        top:0;
+        right:10px;
+        }
+
+    &__body {
+        margin-top:10px;
+        @include flexbox($justify-content:space-between);
+        padding: 10px 15px 20px 15px;
+
+        h4 {
+            @include font ($font-size:1.2em, $font-weight:800);
+            margin:0;
+        }
+
+        p {
+            margin:5px 0px 0px 0px;
+        }
+
+        i {
+            @include font($font-weight:100);
+            
+        }
+
+
+    }
+
+
+}
+
+
