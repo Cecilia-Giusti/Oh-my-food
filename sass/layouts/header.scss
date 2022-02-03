@@ -8,11 +8,11 @@ header {
     box-sizing: border-box;
     box-shadow: 4px 5px 10px 0px rgba(0, 0, 0, 0.247);
     margin-bottom:20px;
-    @include center_flexbox;
+    @include flexbox;
 
     h1 {
         @include title_font;
-        @include center_flexbox;
+        @include flexbox;
         flex-grow:1;
     }
     a {
