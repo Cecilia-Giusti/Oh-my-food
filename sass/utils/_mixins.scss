@@ -1,4 +1,4 @@
-// Mixins de placement 
+// Mixin de placement 
 
 @mixin flexbox ($justify-content: center, $align-items: center, $flex-direction: row){
     display : flex;
@@ -7,8 +7,11 @@
     flex-direction: $flex-direction;
 }
 
+//Mixin de police 
+
 @mixin font($font-size:1.5em, $font-weight:900, $font-family:$text-font) {
     font-size: $font-size;
     font-weight : $font-weight;
     font-family : $font-family, sans-serif;
 }
+

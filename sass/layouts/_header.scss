@@ -2,10 +2,9 @@
 @media all{
 
 header {
-    width:100%;
+    width: $tall_dimension;
     height: 70px;
     margin:auto;
-    box-sizing: border-box;
     box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.151);
     @include flexbox;
     z-index: 1;
