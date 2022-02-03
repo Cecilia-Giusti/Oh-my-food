@@ -1,4 +1,4 @@
 
-Ajout du footer 
+Ajout de la page d'accueil (sans animation)
 
-Version: 3
+Version: 4
