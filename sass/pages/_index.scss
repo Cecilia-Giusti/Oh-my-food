@@ -2,7 +2,7 @@
 
 /*Premiere section  */
 
-.section__primary{
+.section-primary{
     @include flexbox($flex-direction:column);
     width:$tall_dimension;
 }
@@ -36,7 +36,7 @@
 
 /*Présentation */
 @media all{
-    .art__presentation {
+    .art-presentation {
         width:$tall_dimension;
         background-color: $background_color_light;
         text-align: center;
@@ -60,7 +60,7 @@
 }}
 
 @media (min-width: 1000px) {
-    .art__presentation{
+    .art-presentation{
         height: 300px;
         @include flexbox($flex-direction:column);
         gap:10px;
@@ -161,7 +161,7 @@ aside {
 }
 
 @media (min-width: 1000px) {
-.section__primary {
+.section-primary {
     @include flexbox ($flex-direction:row);
     flex-wrap : wrap;
 }
@@ -207,7 +207,7 @@ aside {
 /* Section des restaurants */
 @media all {
 
-.section__restaurants {
+.section-restaurants {
     width: $tall_dimension;
     background-color: $background_color_light;
     padding:40px 0px 40px;
@@ -224,7 +224,7 @@ aside {
 
 /* Cartes des restaurants */
 
-.art {
+.art-restaurant{
     width:90%;
     max-width: 350px;
     margin:auto;
@@ -298,7 +298,7 @@ aside {
 
 @media (min-width: 500px) {
 
-.section__restaurants{
+.section-restaurants{
     
 
     &--flex{
@@ -313,7 +313,7 @@ aside {
     }
 }
 
-.art {
+.art-restaurant {
     margin:0;
 
     &__new {
@@ -325,7 +325,7 @@ aside {
 }
 
 @media (min-width: 1000px) {
-    .section__restaurants{
+    .section-restaurants{
        
         &--flex {
             width:90%;
@@ -335,7 +335,7 @@ aside {
         }
     }
 
-    .art {
+    .art-restaurant {
         width:$tall_dimension;
         max-width: 400px;
 
