@@ -103,9 +103,8 @@ aside {
             bottom: 0;
             left: 0;
             z-index: -1;
-            transition: opacity 250ms;
             border-radius: 15px;
-            box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+            @include boxshadow($box-shadow:4px 5px 20px 0px rgba(0, 0, 0, 0.158) );
         }
 
         &--circle{ //cercle autour des chiffres
@@ -119,13 +118,6 @@ aside {
             position:absolute;
             top:22px;
             left:-10px;
-        }
-
-        i {
-            font-size: 16px;
-            text-align: center;
-            padding-left:10px;
-            color:$icon_color;
         }
 
         
@@ -203,6 +195,12 @@ aside {
     border-radius : 20px 20px 20px 20px;
     position:relative;
     box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+    transition-duration: 250ms;
+
+    &:hover {
+        @include boxshadow;
+        opacity: 90%;
+    }
 
     a{
         text-decoration: none;
