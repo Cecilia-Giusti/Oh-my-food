@@ -53,4 +53,17 @@ footer {
     }
 }
 
+@media (min-width:1000px) {
+    ul {
+        @include flexbox($justify-content:space-around);
+        width: 80%;
+
+        li {
+            margin-top:0;
+        }
+    }
+
+
+}
+
 

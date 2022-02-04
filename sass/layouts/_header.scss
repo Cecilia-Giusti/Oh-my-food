@@ -31,3 +31,13 @@ header {
 }
 
 }
+
+@media (min-width: 1000px) {
+
+    header h1 {
+        justify-content: flex-start;
+        margin-left:40px;
+    }
+
+
+}
