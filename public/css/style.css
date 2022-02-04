@@ -548,17 +548,22 @@ main {
   /* Corps de la page */
   .main-menu {
     width: 100%;
+    background-color: #f6f6f6;
     /* Images du restaurant */
   }
   .main-menu__img {
     width: 100%;
+    height: 300px;
+    max-height: 400px;
     overflow: hidden;
     z-index: -1;
   }
   .main-menu__img img {
     width: 100%;
+    height: 300px;
+    max-height: 400px;
     z-index: -1;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   .section-menu {
@@ -613,9 +618,10 @@ main {
   flex-direction: column;
   gap: 20px;
   list-style: none;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  width: 90%;
+  margin: auto;
 }
 .dish-list__item {
   background-color: white;
@@ -638,6 +644,10 @@ main {
 }
 .dish-list__item--regular {
   font-size: 0.9em;
+}
+.dish-list button {
+  margin-top: 20px;
+  padding: 15px 40px 15px 40px;
 }
 
 /*# sourceMappingURL=style.css.map */
