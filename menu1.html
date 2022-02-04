@@ -12,101 +12,113 @@
   <script src="https://kit.fontawesome.com/1365cabd78.js" crossorigin="anonymous"></script>
 </head>
 
+<!-- Page menu -->
+
 <body>
+
 
   <header>
     <a href="index.html"><i class="fas fa-arrow-left visible"></i></a>
     <h1> ohmyfood</h1>
   </header>
 
-  <main>
-    <img src="./images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Assiette du restaurant La palette du goût">
-    <section>
-      <h5>La palette du goût</h5>
-      <div class="btn">
-        <i class="btn__heart btn__heart--full fas fa-heart fa-lg"></i>
-        <i class="btn__heart btn__heart--border far fa-heart fa-lg"></i>
+  <!-- Corps de la page -->
+  <main class="main-menu">
+
+    <!-- Images du restaurant -->
+    <div class="main-menu__img">
+      <img src="./images/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="Assiette du restaurant La palette du goût" />
+    </div>
+    <section class="section-menu">
+      <div class="section-menu__title">
+        <h5>La palette du goût</h5>
+        <div class="btn">
+          <i class="btn__heart btn__heart--menu-position btn__heart--full fas fa-heart fa-lg"></i>
+          <i class="btn__heart btn__heart--menu-position btn__heart--border far fa-heart fa-lg"></i>
+        </div>
       </div>
 
-      <section>
-        <article>
-          <h6>
-            Entrées</h6>
-          <ul>
-            <li>
+      <section class="section-dish">
+        <article class="art-dish">
+          <h6>Entrées</h6>
+          <div class="trait"></div>
+          <ul class="dish-list">
+            <li class="dish-list__item">
               <div>
-                <p>Fricassée d'escargot</p>
-                <p>Au piment d'Espelette </p>
+                <p class="dish-list__item--bold">Fricassée d'escargot</p>
+                <p class="dish-list__item--regular">Au piment d'Espelette </p>
               </div>
-              <p>25€</p>
+              <p class="dish-list__item--bold">25€</p>
             </li>
-            <li>
+            <li class="dish-list__item">
               <div>
-                <p>Foie gras de canard mi-cuit</p>
-                <p>Et ses copeaux de truffe noire</p>
+                <p class="dish-list__item--bold">Foie gras de canard mi-cuit</p>
+                <p class="dish-list__item--regular">Et ses copeaux de truffe noire</p>
               </div>
-              <p>35€</p>
+              <p class="dish-list__item--bold">35€</p>
             </li>
-            <li>
+            <li class="dish-list__item">
               <div>
-                <p>Oeuf au plat</p>
-                <p>Assaisonné à la truffe sur lit de caviar</p>
+                <p class="dish-list__item--bold">Oeuf au plat</p>
+                <p class="dish-list__item--regular">Assaisonné à la truffe sur lit de caviar</p>
               </div>
-              <p>20€</p>
+              <p class="dish-list__item--bold">20€</p>
             </li>
           </ul>
         </article>
 
-        <article>
+        <article class="art-dish">
           <h6>Plats</h6>
-          <ul>
-            <li>
+          <div class="trait"></div>
+          <ul class="dish-list">
+            <li class="dish-list__item">
               <div>
-                <p>Filet de boeuf aux herbes</p>
-                <p>Accompagné de sa ribambelle de légumes</p>
+                <p class="dish-list__item--bold">Filet de boeuf aux herbes</p>
+                <p class="dish-list__item--regular">Accompagné de sa ribambelle de légumes</p>
               </div>
-              <p>40€</p>
+              <p class="dish-list__item--bold">40€</p>
             </li>
-            <li>
+            <li class="dish-list__item">
               <div>
-                <p>Parmentier de queue de boeuf</p>
-                <p>À la truffe noire sur sa purée de panais</p>
+                <p class="dish-list__item--bold">Parmentier de queue de boeuf</p>
+                <p class="dish-list__item--regular">À la truffe noire sur sa purée de panais</p>
               </div>
-              <p>35€</p>
+              <p class="dish-list__item--bold">35€</p>
             </li>
-            <li>
+            <li class="dish-list__item">
               <div>
-                <p>Filet de turbot</p>
-                <p>Aux agrumes</p>
+                <p class="dish-list__item--bold">Filet de turbot</p>
+                <p class="dish-list__item--regular">Aux agrumes</p>
               </div>
-              <p>44€</p>
+              <p class="dish-list__item--bold">44€</p>
             </li>
           </ul>
         </article>
 
-        <article>
+        <article class="art-dish">
           <h6>Desserts</h6>
-          <ul>
-            <li>
+          <div class="trait"></div>
+          <ul class="dish-list">
+            <li class="dish-list__item">
               <div>
-                <p>Paris-Brest</p>
-                <p>Revisité</p>
+                <p class="dish-list__item--bold">Paris-Brest</p>
+                <p class="dish-list__item--regular">Revisité</p>
               </div>
-              <p>18€</p>
+              <p class="dish-list__item--bold">18€</p>
             </li>
-            <li>
+            <li class="dish-list__item">
               <div>
-                <p>Macaron au chocolat d'exception </p>
-                <p>Et glace à la vanille de Madagascar</p>
+                <p class="dish-list__item--bold">Macaron au chocolat d'exception </p>
+                <p class="dish-list__item--regular">Et glace à la vanille de Madagascar</p>
               </div>
-              <p>22€</p>
+              <p class="dish-list__item--bold">22€</p>
             </li>
-            <li>
+            <li class="dish-list__item">
               <div>
-                <p>Mousse au chocolat </p>
-                <p>Au piment d'Espelette et à la truffe noire</p>
+                <p class="dish-list__item--bold">Mousse au chocolat </p>
+                <p class="dish-list__item--regular">Au piment d'Espelette et à la truffe noire</p>
               </div>
-              <p>23€</p>
+              <p class="dish-list__item--bold">23€</p>
             </li>
           </ul>
         </article>
@@ -114,7 +126,7 @@
   </main>
 
   <footer>
-    <h6>ohmyfood</h6>
+    <p class="footer__logo">ohmyfood</p>
     <ul>
       <li><a href="#"><i class="fas fa-utensils fa-sm "></i> Proposer un restaurant</a></li>
       <li><a href="#"><i class="fas fa-hands-helping fa-xs"></i> Devenir partenaire</a></li>

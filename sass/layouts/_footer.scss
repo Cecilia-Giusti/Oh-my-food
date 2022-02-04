@@ -6,7 +6,7 @@ footer {
     box-sizing: border-box;
     @include flexbox($align-items:flex-start, $flex-direction:column);
     
-    h6 {
+    .footer__logo {
         color: $light_color;
         @include font($font-size:1.2em, $font-weight: 400, $font-family:$title_font);
         font-weight: normal;
@@ -42,7 +42,7 @@ footer {
       @include flexbox;
         gap: 50px;
 
-        h6 {
+        .footer__logo {
             margin:0;
         }
 

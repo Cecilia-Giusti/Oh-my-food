@@ -1,11 +1,21 @@
 // Mixin de placement 
 
-@mixin flexbox ($justify-content: center, $align-items: center, $flex-direction: row){
-    display : flex;
-    justify-content: $justify-content;
-    align-items: $align-items;
-    flex-direction: $flex-direction;
-}
+    // Flexbox 
+    @mixin flexbox ($justify-content: center, $align-items: center, $flex-direction: row){
+        display : flex;
+        justify-content: $justify-content;
+        align-items: $align-items;
+        flex-direction: $flex-direction;
+    }
+
+    //Position absolute 
+    @mixin absolute ($top:none, $left:none, $bottom:none, $right:none){
+        position:absolute;
+        top:$top;
+        left:$left;
+        bottom:$bottom;
+        right:$right;
+    }
 
 //Mixin de police 
 

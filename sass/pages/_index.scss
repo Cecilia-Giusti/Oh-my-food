@@ -107,7 +107,7 @@ aside {
         background-color: $background_color_light;
         padding:20px 18px 20px 18px;
         border-radius: 15px;
-        box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
         @include font($font-size:0.9em, $font-weight:500);
         position :relative;
         z-index: 1;
