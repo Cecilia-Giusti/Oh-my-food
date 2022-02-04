@@ -3,7 +3,7 @@
 
 .btn {
 
-    &__main{ //Bouton normal 
+    &-main{ //Bouton normal 
         color :$light_color;
         background: $gradient;
         box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.26);

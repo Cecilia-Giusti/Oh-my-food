@@ -4,7 +4,7 @@
 /*Police du texte */
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
 /*Bouton principal */
-.btn__main {
+.btn-main {
   color: white;
   background: linear-gradient(170deg, #ff79da 0%, #9356dc 100%);
   box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.26);
@@ -17,10 +17,10 @@
   position: relative;
   z-index: 1;
 }
-.btn__main:hover::after {
+.btn-main:hover::after {
   opacity: 1;
 }
-.btn__main::after {
+.btn-main::after {
   content: "";
   position: absolute;
   top: 0;
@@ -197,7 +197,7 @@
 }
 /*Page d'accueil */
 /*Premiere section  */
-.section__primary {
+.section-primary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -231,13 +231,13 @@
 }
 /*Présentation */
 @media all {
-  .art__presentation {
+  .art-presentation {
     width: 100%;
     background-color: #f6f6f6;
     text-align: center;
     padding: 40px 0 40px 0;
   }
-  .art__presentation h2 {
+  .art-presentation h2 {
     margin: auto;
     margin-top: 0;
     width: 70%;
@@ -245,7 +245,7 @@
     font-weight: 900;
     font-family: "Roboto", sans-serif;
   }
-  .art__presentation p {
+  .art-presentation p {
     color: #353535;
     width: 80%;
     margin: auto;
@@ -253,7 +253,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .art__presentation {
+  .art-presentation {
     height: 300px;
     display: flex;
     justify-content: center;
@@ -261,7 +261,7 @@
     flex-direction: column;
     gap: 10px;
   }
-  .art__presentation h2, .art__presentation p {
+  .art-presentation h2, .art-presentation p {
     margin: 0;
   }
 }
@@ -356,7 +356,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .section__primary {
+  .section-primary {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -405,18 +405,18 @@
 }
 /* Section des restaurants */
 @media all {
-  .section__restaurants {
+  .section-restaurants {
     width: 100%;
     background-color: #f6f6f6;
     padding: 40px 0px 40px;
   }
-  .section__restaurants h3 {
+  .section-restaurants h3 {
     font-size: 1.5em;
     font-weight: 900;
     font-family: "Roboto", sans-serif;
     margin-left: 5%;
   }
-  .section__restaurants--flex {
+  .section-restaurants--flex {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -425,7 +425,7 @@
   }
 
   /* Cartes des restaurants */
-  .art {
+  .art-restaurant {
     width: 90%;
     max-width: 350px;
     margin: auto;
@@ -435,16 +435,16 @@
     box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
     transition-duration: 250ms;
   }
-  .art:hover {
+  .art-restaurant:hover {
     box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.212);
     transition-duration: 250ms;
     opacity: 90%;
   }
-  .art a {
+  .art-restaurant a {
     text-decoration: none;
     color: black;
   }
-  .art__img {
+  .art-restaurant__img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -453,11 +453,11 @@
     overflow: hidden;
     height: 150px;
   }
-  .art__img img {
+  .art-restaurant__img img {
     width: 100%;
     object-fit: contain;
   }
-  .art__new {
+  .art-restaurant__new {
     background-color: #99e2d0;
     color: #278870;
     font-size: 0.8em;
@@ -468,7 +468,7 @@
     top: 0;
     right: 10px;
   }
-  .art__body {
+  .art-restaurant__body {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
@@ -476,33 +476,33 @@
     flex-direction: row;
     padding: 10px 15px 20px 15px;
   }
-  .art__body h4 {
+  .art-restaurant__body h4 {
     font-size: 1em;
     font-weight: 900;
     font-family: "Roboto", sans-serif;
     margin: 0;
   }
-  .art__body p {
+  .art-restaurant__body p {
     margin: 5px 0px 0px 0px;
   }
 }
 @media (min-width: 500px) {
-  .section__restaurants--flex {
+  .section-restaurants--flex {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
   }
-  .section__restaurants h3 {
+  .section-restaurants h3 {
     text-align: center;
     margin-left: 0;
   }
 
-  .art {
+  .art-restaurant {
     margin: 0;
   }
-  .art__new {
+  .art-restaurant__new {
     font-size: 1.2em;
     font-weight: 900;
     font-family: "Roboto", sans-serif;
@@ -510,17 +510,17 @@
   }
 }
 @media (min-width: 1000px) {
-  .section__restaurants--flex {
+  .section-restaurants--flex {
     width: 90%;
     gap: 30px;
     margin: auto;
   }
 
-  .art {
+  .art-restaurant {
     width: 100%;
     max-width: 400px;
   }
-  .art__img {
+  .art-restaurant__img {
     height: 200px;
   }
 }
