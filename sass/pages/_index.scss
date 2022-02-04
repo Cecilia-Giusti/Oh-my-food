@@ -7,6 +7,8 @@
     width:$tall_dimension;
 }
 
+
+@media all {
 /*Localisation */
 
 .location {
@@ -21,29 +23,52 @@
     }
 }
 
+}
+
+@media (min-width: 1400px) {
+.location {
+    width:50%;
+    max-width: 500px;
+}
+}
+
+
+
 /*Présentation */
+@media all{
+    .art__presentation {
+        width:$tall_dimension;
+        background-color: $background_color_light;
+        text-align: center;
+        padding: 40px 0 40px 0;
 
-.art__presentation {
-    width:$tall_dimension;
-    background-color: $background_color_light;
-    text-align: center;
-    padding: 40px 0 40px 0;
+        h2 {
+            margin:auto;
+            margin-top:0;
+            width:70%;
+            @include font($font-size: 1.3em, $font-weight:900);
+        }
 
-    h2 {
-        margin:auto;
-        margin-top:0;
-        width:70%;
-        @include font($font-size: 1.3em, $font-weight:900);
+        p {
+            color: $background_color_footer;
+            width:80%;
+            margin:auto;
+            padding:20px 0 30px 0;
+            
+        }
+
+}}
+
+@media (min-width: 1000px) {
+    .art__presentation{
+        height: 300px;
+        @include flexbox($flex-direction:column);
+        gap:10px;
+
+        h2, p{
+            margin:0;
+        }
     }
-
-    p {
-        color: $background_color_footer;
-        width:80%;
-        margin:auto;
-        padding:20px 0 30px 0;
-        
-    }
-
 }
 
 /*Fonctionnement */
@@ -139,36 +164,48 @@ aside {
 .section__primary {
     @include flexbox ($flex-direction:row);
     flex-wrap : wrap;
+}
 
-    .location {
-        order: 2;
-        width:30%;
-        margin-left:10%;
-        border-radius: 30px;
-        box-shadow: inset 2px 5px 6px rgba(0, 0, 0, 0.13);
+.location {
+    order: 2;
+    width:30%;
+    margin-left:10%;
+    border-radius: 30px;
+    box-shadow: inset 2px 5px 6px rgba(0, 0, 0, 0.13);
+}
+
+aside {
+    order:3;
+    width:40%;
+
+    h3 {
+        text-align: center;
     }
+}
 
-    aside {
-        order:3;
-        width:40%;
+.list {
+    width: $tall_dimension;
+    @include flexbox($flex-direction:column);
+    flex-wrap: nowrap;
+    
+}
+}
 
-        h3 {
-            text-align: center;
-        }
-    }
 
+@media (min-width: 1400px) {
     .list {
-        width: $tall_dimension;
-        @include flexbox($flex-direction:column);
-        flex-wrap: nowrap;
-        
-    }
-}
-}
+            @include flexbox($flex-direction:row);
+            flex-wrap: wrap;
+            gap:40px;
+        }
 
-@media all {
+        .list__item {
+            background-color:$light_color;
+        }
+}
 
 /* Section des restaurants */
+@media all {
 
 .section__restaurants {
     width: $tall_dimension;
@@ -205,6 +242,11 @@ aside {
     a{
         text-decoration: none;
         color: $dark_color;
+
+
+        // &:hover h4{
+        //     color:$primary_color;
+        // }
     }
 
     
