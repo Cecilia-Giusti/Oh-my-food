@@ -1,0 +1,111 @@
+
+/* Page menu */
+@media all {
+
+/* Corps de la page */
+.main-menu {
+    width: $tall_dimension;
+    background-color: $background_color_light;
+
+   
+
+    /* Images du restaurant */
+    &__img {
+        width:100%;
+        height:300px;
+        max-height:400px;
+        overflow: hidden;
+        
+        z-index:-1;
+        img {
+            width:100%;
+            height:300px;
+            max-height:400px;
+            z-index:-1;
+            object-fit: cover;
+        }
+    }
+}    
+
+.section-menu {
+    @include flexbox($flex-direction:column, $align-items:flex-start);
+    background-color: $background_color_light;
+    border-radius : 30px 30px 0 0 ;
+    z-index:1;
+    position:relative;
+    bottom:30px;
+    
+
+    &__title {
+        @include flexbox($justify-content:space-between, $flex-direction:row);
+        position:relative;
+        width:90%;
+        margin:auto;
+
+        h5{
+            @include font($font-family:$title_font, $font-size:1.5em, $font-weight: 400);
+            width: 60%;
+        }
+    }
+
+}
+
+.section-dish {
+    width:90%;
+    margin:auto;
+
+    h6{
+        @include font($font-size:1em, $font-weight:400);
+        text-transform: uppercase;
+        margin: 0 0 0 0;
+        }
+
+    .trait {
+        margin-top:5px;
+        width:40px;
+        height:3px;
+        background-color: $tertiary_color;
+    }    
+
+    }
+}
+
+.dish-list {
+    @include flexbox($flex-direction: column);
+    gap:20px;
+    list-style: none;
+    padding-top:20px;
+    padding-bottom:40px;
+    width:90%;
+    margin:auto;
+
+    &__item {
+        background-color: $light_color;
+        width:100%;
+        padding:15px;
+        border-radius: 20px 20px 20px 20px;
+        @include flexbox($justify-content:space-between);
+        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+
+        p{
+            margin:5px 0 5px 0;
+        }
+
+        &--bold {
+            font-weight: 800;
+            align-self: flex-end;
+        }
+
+        &--regular {
+            font-size:0.9em;
+        }
+    }
+
+    button{
+        margin-top:20px;
+        padding: 15px 40px 15px 40px;
+    }
+}
+
+
+
