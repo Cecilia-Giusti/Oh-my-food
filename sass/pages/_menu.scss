@@ -26,7 +26,7 @@
         }
     }
 }    
-
+/* Section du menu*/
 .section-menu {
     @include flexbox($flex-direction:column, $align-items:flex-start);
     background-color: $background_color_light;
@@ -34,8 +34,8 @@
     z-index:1;
     position:relative;
     bottom:30px;
-    
 
+     /*Nom du restaurant*/
     &__title {
         @include flexbox($justify-content:space-between, $flex-direction:row);
         position:relative;
@@ -49,17 +49,20 @@
     }
 
 }
-
+/*Section du menu*/
 .section-dish {
     width:90%;
     margin:auto;
 
+    /* Titre, entrées plats et desserts*/
     h6{
         @include font($font-size:1em, $font-weight:400);
         text-transform: uppercase;
         margin: 0 0 0 0;
         }
 
+
+/* Trait de décoration sous le titre*/
     .trait {
         margin-top:5px;
         width:40px;
@@ -68,8 +71,8 @@
     }    
 
     }
-}
 
+/* Liste des plats*/
 .dish-list {
     @include flexbox($flex-direction: column);
     gap:20px;
@@ -100,12 +103,65 @@
             font-size:0.9em;
         }
     }
+}
 
+.art-dish__button--position {
+     text-align: center;
+     width:100%;
     button{
         margin-top:20px;
         padding: 15px 40px 15px 40px;
+       
     }
 }
 
+}
+
+@media (min-width:500px){
+/* Trait de décoration sous le titre*/
+.section-dish {
+
+    width:80%;
+
+    h6 {
+        text-align: center;
+    }
+    .trait {
+            width:100%;
+    }
+}
+}
+
+@media (min-width:1000px){
+    .main-menu__img {
+        
+        height:700px;
+        max-height:800px;
+    
+    img {
+      
+    height:700px;
+    max-height:800px;
+        
+    }}
+    
+    .dish-list {
+        @include flexbox($flex-direction: row, $align-items:flex-start);
+        
+
+        &__item {
+            @include flexbox ($flex-direction:column);
+            width:30%;
+            text-align: center;
+
+
+        
+            &--bold {
+                align-self: auto;
+            }
+        
+        }
+    }
+}
 
 
