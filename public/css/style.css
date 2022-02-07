@@ -651,7 +651,12 @@ main {
   .dish-list__item--regular {
     font-size: 0.9em;
   }
-  .dish-list button {
+
+  .art-dish__button--position {
+    text-align: center;
+    width: 100%;
+  }
+  .art-dish__button--position button {
     margin-top: 20px;
     padding: 15px 40px 15px 40px;
   }
@@ -666,6 +671,34 @@ main {
   }
   .section-dish .trait {
     width: 100%;
+  }
+}
+@media (min-width: 1000px) {
+  .main-menu__img {
+    height: 700px;
+    max-height: 800px;
+  }
+  .main-menu__img img {
+    height: 700px;
+    max-height: 800px;
+  }
+
+  .dish-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+  .dish-list__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+  }
+  .dish-list__item--bold {
+    align-self: auto;
   }
 }
 

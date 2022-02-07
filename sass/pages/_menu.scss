@@ -103,10 +103,15 @@
             font-size:0.9em;
         }
     }
+}
 
+.art-dish__button--position {
+     text-align: center;
+     width:100%;
     button{
         margin-top:20px;
         padding: 15px 40px 15px 40px;
+       
     }
 }
 
@@ -128,6 +133,35 @@
 }
 
 @media (min-width:1000px){
+    .main-menu__img {
+        
+        height:700px;
+        max-height:800px;
     
+    img {
+      
+    height:700px;
+    max-height:800px;
+        
+    }}
+    
+    .dish-list {
+        @include flexbox($flex-direction: row, $align-items:flex-start);
+        
+
+        &__item {
+            @include flexbox ($flex-direction:column);
+            width:30%;
+            text-align: center;
+
+
+        
+            &--bold {
+                align-self: auto;
+            }
+        
+        }
+    }
 }
+
 
