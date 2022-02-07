@@ -1,4 +1,5 @@
 
-Ajout de la page d'accueil (sans animation)
+Ajout de l'animation des coeurs 
+Ajout des pages menu (sans animation)
 
-Version: 4
+Version: 5
