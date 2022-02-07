@@ -3,13 +3,13 @@
 
 .btn {
 
-    &__main{ //Bouton normal 
+    &-main{ //Bouton normal 
         color :$light_color;
         background: $gradient;
         box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.26);
         border-radius: 50px;
         border:none;
-        @include text_font;
+        @include font($font-size:0.8em, $font-weight: 400);
         padding:15px 18px 15px 18px;
         position:relative;
         z-index: 1;
@@ -30,9 +30,67 @@
             background:$gradient_light;
             opacity: 0;
             z-index: -1;
-            transition: opacity 250ms;
             border-radius: 50px;
-            box-shadow: 1px 2px 6px 2px rgba(0, 0, 0, 0.212);
+            @include boxshadow;
         }
     }
 }
+
+/*Bouton coeur */
+.btn {
+    @include flexbox;
+    cursor: pointer;
+   
+    &:hover{//Animation
+
+        //Coeur avec bordure
+        .btn__heart--border {
+            background:$gradient;
+            background-clip:text;
+            -webkit-background-clip:text;
+            color:transparent;
+        } 
+
+        //Coeur rempli
+        .btn__heart--full {
+            transform:scale(1);  
+        }
+    }
+    //Position des coeurs et tailles 
+    &__heart {
+        font-size: 25px;    
+        text-align: center;
+        padding:5px 0 5px 0;
+
+        &--position {
+            @include absolute($bottom:30px, $right:30px);
+        }
+
+        &--menu-position {
+            @include absolute($right:20px);
+        }
+
+        //Coeur rempli
+        &--full {
+           
+            //Couleur du coeur en dégradé
+            background:$gradient;
+            background-clip:text;
+            -webkit-background-clip:text;
+            color:transparent;
+
+            //Animation
+            transform: scale(0);
+            transform-origin: bottom;
+            transition: transform 600ms ease-in-out;
+            }
+
+            //Coeur avec bordure
+            &--border {
+            transform-origin: bottom;
+            transition: color 800ms ease-in-out;
+            }
+        }
+    }
+
+

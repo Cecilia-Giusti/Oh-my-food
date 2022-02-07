@@ -1,0 +1,167 @@
+
+/* Page menu */
+@media all {
+
+/* Corps de la page */
+.main-menu {
+    width: $tall_dimension;
+    background-color: $background_color_light;
+
+   
+
+    /* Images du restaurant */
+    &__img {
+        width:100%;
+        height:300px;
+        max-height:400px;
+        overflow: hidden;
+        
+        z-index:-1;
+        img {
+            width:100%;
+            height:300px;
+            max-height:400px;
+            z-index:-1;
+            object-fit: cover;
+        }
+    }
+}    
+/* Section du menu*/
+.section-menu {
+    @include flexbox($flex-direction:column, $align-items:flex-start);
+    background-color: $background_color_light;
+    border-radius : 30px 30px 0 0 ;
+    z-index:1;
+    position:relative;
+    bottom:30px;
+
+     /*Nom du restaurant*/
+    &__title {
+        @include flexbox($justify-content:space-between, $flex-direction:row);
+        position:relative;
+        width:90%;
+        margin:auto;
+
+        h5{
+            @include font($font-family:$title_font, $font-size:1.5em, $font-weight: 400);
+            width: 60%;
+        }
+    }
+
+}
+/*Section du menu*/
+.section-dish {
+    width:90%;
+    margin:auto;
+
+    /* Titre, entrées plats et desserts*/
+    h6{
+        @include font($font-size:1em, $font-weight:400);
+        text-transform: uppercase;
+        margin: 0 0 0 0;
+        }
+
+
+/* Trait de décoration sous le titre*/
+    .trait {
+        margin-top:5px;
+        width:40px;
+        height:3px;
+        background-color: $tertiary_color;
+    }    
+
+    }
+
+/* Liste des plats*/
+.dish-list {
+    @include flexbox($flex-direction: column);
+    gap:20px;
+    list-style: none;
+    padding-top:20px;
+    padding-bottom:40px;
+    width:90%;
+    margin:auto;
+
+    &__item {
+        background-color: $light_color;
+        width:100%;
+        padding:15px;
+        border-radius: 20px 20px 20px 20px;
+        @include flexbox($justify-content:space-between);
+        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+
+        p{
+            margin:5px 0 5px 0;
+        }
+
+        &--bold {
+            font-weight: 800;
+            align-self: flex-end;
+        }
+
+        &--regular {
+            font-size:0.9em;
+        }
+    }
+}
+
+.art-dish__button--position {
+     text-align: center;
+     width:100%;
+    button{
+        margin-top:20px;
+        padding: 15px 40px 15px 40px;
+       
+    }
+}
+
+}
+
+@media (min-width:500px){
+/* Trait de décoration sous le titre*/
+.section-dish {
+
+    width:80%;
+
+    h6 {
+        text-align: center;
+    }
+    .trait {
+            width:100%;
+    }
+}
+}
+
+@media (min-width:1000px){
+    .main-menu__img {
+        
+        height:700px;
+        max-height:800px;
+    
+    img {
+      
+    height:700px;
+    max-height:800px;
+        
+    }}
+    
+    .dish-list {
+        @include flexbox($flex-direction: row, $align-items:flex-start);
+        
+
+        &__item {
+            @include flexbox ($flex-direction:column);
+            width:30%;
+            text-align: center;
+
+
+        
+            &--bold {
+                align-self: auto;
+            }
+        
+        }
+    }
+}
+
+
