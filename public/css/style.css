@@ -600,7 +600,6 @@ main {
     width: 90%;
     margin: auto;
     /* Titre, entrées plats et desserts*/
-    /* Trait de décoration sous le titre*/
   }
   .section-dish h6 {
     font-size: 1em;
@@ -608,9 +607,16 @@ main {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     margin: 0 0 0 0;
+    position: relative;
+    /* Trait de décoration sous le titre*/
   }
-  .section-dish .trait {
-    margin-top: 5px;
+  .section-dish h6::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 40px;
     height: 3px;
     background-color: #99e2d0;
@@ -662,14 +668,14 @@ main {
   }
 }
 @media (min-width: 500px) {
-  /* Trait de décoration sous le titre*/
   .section-dish {
     width: 80%;
   }
   .section-dish h6 {
     text-align: center;
+    /* Trait de décoration sous le titre*/
   }
-  .section-dish .trait {
+  .section-dish h6::after {
     width: 100%;
   }
 }

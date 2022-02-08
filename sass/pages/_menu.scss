@@ -59,16 +59,28 @@
         @include font($font-size:1em, $font-weight:400);
         text-transform: uppercase;
         margin: 0 0 0 0;
-        }
+        position:relative;
 
 
 /* Trait de décoration sous le titre*/
-    .trait {
-        margin-top:5px;
-        width:40px;
-        height:3px;
-        background-color: $tertiary_color;
-    }    
+        &::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            right: 0;
+            bottom: 0;
+            left: 0; 
+            width:40px;
+            height:3px;
+            background-color: $tertiary_color;  
+        }
+
+        
+        }
+
+
+
+
 
     }
 
@@ -118,17 +130,20 @@
 }
 
 @media (min-width:500px){
-/* Trait de décoration sous le titre*/
+
 .section-dish {
 
     width:80%;
 
     h6 {
         text-align: center;
-    }
-    .trait {
+
+        /* Trait de décoration sous le titre*/
+        &::after {
             width:100%;
+        }
     }
+   
 }
 }
 
@@ -143,7 +158,8 @@
     height:700px;
     max-height:800px;
         
-    }}
+    }
+}
     
     .dish-list {
         @include flexbox($flex-direction: row, $align-items:flex-start);
