@@ -1,8 +1,24 @@
 @charset "UTF-8";
-/*Police des titres */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-/*Police du texte */
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
+@keyframes background_check {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes rotate_check {
+  0% {
+    transform: translateX(100%) rotate(-1turn);
+  }
+  100% {
+    transform: translateX(0%) rotate(0turn);
+  }
+}
+/*Police des titres */
+/*Police du texte */
 /*Bouton principal */
 .btn-main {
   color: white;
@@ -95,8 +111,34 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    flex-wrap: nowrap;
     box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
     transition-duration: 250ms;
+    position: relative;
+  }
+  .dish-list__item:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #99e2d0;
+    border-radius: 0px 20px 20px 0px;
+    width: 80px;
+    transform-origin: right;
+    animation: background_check 300ms;
+  }
+  .dish-list__item:hover::after {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5em;
+    color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    animation: rotate_check 400ms;
   }
   .dish-list__item p {
     margin: 5px 0 5px 0;
@@ -662,7 +704,7 @@ main {
   /* Liste des plats*/
   .dish-list {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     gap: 20px;
@@ -671,28 +713,6 @@ main {
     padding-bottom: 40px;
     width: 90%;
     margin: auto;
-  }
-  .dish-list__item {
-    background-color: white;
-    width: 100%;
-    padding: 15px;
-    border-radius: 20px 20px 20px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
-    transition-duration: 250ms;
-  }
-  .dish-list__item p {
-    margin: 5px 0 5px 0;
-  }
-  .dish-list__item--bold {
-    font-weight: 800;
-    align-self: flex-end;
-  }
-  .dish-list__item--regular {
-    font-size: 0.9em;
   }
 
   .art-dish__button--position {
@@ -731,17 +751,6 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-  }
-  .dish-list__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 30%;
-    text-align: center;
-  }
-  .dish-list__item--bold {
-    align-self: auto;
   }
 }
 

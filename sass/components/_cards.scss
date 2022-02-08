@@ -6,7 +6,43 @@
     padding:15px;
     border-radius: 20px 20px 20px 20px;
     @include flexbox($justify-content:space-between);
+    flex-wrap: nowrap;
     @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+    position:relative;
+
+    &:hover {
+
+        &::before{
+            content:"";
+            position:absolute;
+            top:0;
+            bottom:0;
+            right:0;
+            background-color: $tertiary_color;
+            border-radius: 0px 20px 20px 0px;
+            width:80px;
+            transform-origin: right;
+            animation: background_check 300ms;
+            
+        }
+
+        &::after {
+        
+                content:"\f058";
+                font-family: "Font Awesome 5 Free";
+                text-align: center;
+                font-weight: 900;
+                font-size:1.5em;
+                color:$light_color;
+                position:absolute;
+                top:30px;
+                right:30px;
+                animation: rotate_check 400ms;
+               
+                
+        }
+
+    }
 
     p{
         margin:5px 0 5px 0;
@@ -14,12 +50,14 @@
 
     &--bold {
         font-weight: 800;
-        align-self: flex-end;
+       align-self: flex-end;
     }
 
     &--regular {
         font-size:0.9em;
     }
+
+  
 }
 
 }
