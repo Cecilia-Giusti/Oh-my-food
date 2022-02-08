@@ -1,0 +1,41 @@
+@media all {
+    
+    .dish-list__item {
+    background-color: $light_color;
+    width:100%;
+    padding:15px;
+    border-radius: 20px 20px 20px 20px;
+    @include flexbox($justify-content:space-between);
+    @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+
+    p{
+        margin:5px 0 5px 0;
+    }
+
+    &--bold {
+        font-weight: 800;
+        align-self: flex-end;
+    }
+
+    &--regular {
+        font-size:0.9em;
+    }
+}
+
+}
+
+
+@media (min-width:1000px){
+    .dish-list__item {
+    @include flexbox ($flex-direction:column);
+    width:30%;
+    text-align: center;
+
+
+
+    &--bold {
+        align-self: auto;
+    }
+
+    }
+}
