@@ -1,8 +1,24 @@
 @charset "UTF-8";
-/*Police des titres */
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-/*Police du texte */
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
+@keyframes background_check {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes rotate_check {
+  0% {
+    transform: translateX(100%) rotate(-1turn);
+  }
+  100% {
+    transform: translateX(0%) rotate(0turn);
+  }
+}
+/*Police des titres */
+/*Police du texte */
 /*Bouton principal */
 .btn-main {
   color: white;
@@ -85,6 +101,139 @@
   transition: color 800ms ease-in-out;
 }
 
+@media all {
+  .dish-list__item {
+    background-color: white;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
+    transition-duration: 250ms;
+    position: relative;
+  }
+  .dish-list__item:hover .dish-list__item-body {
+    width: 75%;
+    gap: 10px;
+    transition-duration: 300ms;
+    margin-right: 10px;
+  }
+  .dish-list__item:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #99e2d0;
+    border-radius: 0px 20px 20px 0px;
+    width: 80px;
+    transform-origin: right;
+    animation: background_check 300ms;
+  }
+  .dish-list__item:hover::after {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5em;
+    color: white;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    animation: rotate_check 400ms;
+  }
+  .dish-list__item-body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .dish-list__item p {
+    margin: 5px 0 5px 0;
+  }
+  .dish-list__item-p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  .dish-list__item-p--bold {
+    font-weight: 800;
+    align-self: flex-end;
+  }
+  .dish-list__item-p--regular {
+    font-size: 0.9em;
+  }
+}
+@media (min-width: 500px) {
+  .dish-list__item:hover .dish-list__item-body {
+    width: 80%;
+  }
+}
+@media (min-width: 700px) {
+  .dish-list__item:hover .dish-list__item-body {
+    width: 85%;
+  }
+}
+@media (min-width: 1000px) {
+  .dish-list__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    text-align: center;
+  }
+  .dish-list__item:hover .dish-list__item-body {
+    width: auto;
+    gap: 0;
+    transition-duration: 300ms;
+    margin-right: 0;
+    z-index: 1;
+  }
+  .dish-list__item:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #99e2d0;
+    border-radius: 20px 20px 20px 20px;
+    width: 100%;
+    transform-origin: right;
+    animation: background_check 300ms;
+    z-index: 0;
+  }
+  .dish-list__item:hover::after {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5em;
+    color: white;
+    position: absolute;
+    right: 20px;
+    bottom: none;
+    left: none;
+    top: 70px;
+    animation: rotate_check 300ms;
+  }
+  .dish-list__item-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .dish-list__item-p {
+    white-space: inherit;
+    overflow: inherit;
+    text-overflow: inherit;
+  }
+  .dish-list__item-p--bold {
+    align-self: auto;
+  }
+}
 @media all {
   header {
     width: 100%;
@@ -592,7 +741,7 @@ main {
     font-size: 1.5em;
     font-weight: 400;
     font-family: "Shrikhand", sans-serif;
-    width: 60%;
+    width: 80%;
   }
 
   /*Section du menu*/
@@ -600,7 +749,6 @@ main {
     width: 90%;
     margin: auto;
     /* Titre, entrées plats et desserts*/
-    /* Trait de décoration sous le titre*/
   }
   .section-dish h6 {
     font-size: 1em;
@@ -608,9 +756,16 @@ main {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     margin: 0 0 0 0;
+    position: relative;
+    /* Trait de décoration sous le titre*/
   }
-  .section-dish .trait {
-    margin-top: 5px;
+  .section-dish h6::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 40px;
     height: 3px;
     background-color: #99e2d0;
@@ -629,28 +784,6 @@ main {
     width: 90%;
     margin: auto;
   }
-  .dish-list__item {
-    background-color: white;
-    width: 100%;
-    padding: 15px;
-    border-radius: 20px 20px 20px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
-    transition-duration: 250ms;
-  }
-  .dish-list__item p {
-    margin: 5px 0 5px 0;
-  }
-  .dish-list__item--bold {
-    font-weight: 800;
-    align-self: flex-end;
-  }
-  .dish-list__item--regular {
-    font-size: 0.9em;
-  }
 
   .art-dish__button--position {
     text-align: center;
@@ -662,14 +795,14 @@ main {
   }
 }
 @media (min-width: 500px) {
-  /* Trait de décoration sous le titre*/
   .section-dish {
     width: 80%;
   }
   .section-dish h6 {
     text-align: center;
+    /* Trait de décoration sous le titre*/
   }
-  .section-dish .trait {
+  .section-dish h6::after {
     width: 100%;
   }
 }
@@ -688,17 +821,7 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-  }
-  .dish-list__item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 30%;
-    text-align: center;
-  }
-  .dish-list__item--bold {
-    align-self: auto;
+    flex-wrap: wrap;
   }
 }
 

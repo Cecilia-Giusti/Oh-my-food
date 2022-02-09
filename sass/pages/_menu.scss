@@ -44,7 +44,7 @@
 
         h5{
             @include font($font-family:$title_font, $font-size:1.5em, $font-weight: 400);
-            width: 60%;
+            width: 80%;
         }
     }
 
@@ -59,16 +59,28 @@
         @include font($font-size:1em, $font-weight:400);
         text-transform: uppercase;
         margin: 0 0 0 0;
-        }
+        position:relative;
 
 
 /* Trait de décoration sous le titre*/
-    .trait {
-        margin-top:5px;
-        width:40px;
-        height:3px;
-        background-color: $tertiary_color;
-    }    
+        &::after {
+            content: "";
+            position: absolute;
+            top: 20px;
+            right: 0;
+            bottom: 0;
+            left: 0; 
+            width:40px;
+            height:3px;
+            background-color: $tertiary_color;  
+        }
+
+        
+        }
+
+
+
+
 
     }
 
@@ -81,28 +93,6 @@
     padding-bottom:40px;
     width:90%;
     margin:auto;
-
-    &__item {
-        background-color: $light_color;
-        width:100%;
-        padding:15px;
-        border-radius: 20px 20px 20px 20px;
-        @include flexbox($justify-content:space-between);
-        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
-
-        p{
-            margin:5px 0 5px 0;
-        }
-
-        &--bold {
-            font-weight: 800;
-            align-self: flex-end;
-        }
-
-        &--regular {
-            font-size:0.9em;
-        }
-    }
 }
 
 .art-dish__button--position {
@@ -118,17 +108,20 @@
 }
 
 @media (min-width:500px){
-/* Trait de décoration sous le titre*/
+
 .section-dish {
 
     width:80%;
 
     h6 {
         text-align: center;
-    }
-    .trait {
+
+        /* Trait de décoration sous le titre*/
+        &::after {
             width:100%;
+        }
     }
+   
 }
 }
 
@@ -143,24 +136,12 @@
     height:700px;
     max-height:800px;
         
-    }}
+    }
+}
     
     .dish-list {
         @include flexbox($flex-direction: row, $align-items:flex-start);
-        
-
-        &__item {
-            @include flexbox ($flex-direction:column);
-            width:30%;
-            text-align: center;
-
-
-        
-            &--bold {
-                align-self: auto;
-            }
-        
-        }
+        flex-wrap: wrap;
     }
 }
 

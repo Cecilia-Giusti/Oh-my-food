@@ -1,0 +1,179 @@
+@media all {
+    
+    .dish-list__item {
+    background-color: $light_color;
+    width:100%;
+    padding:15px;
+    border-radius: 20px 20px 20px 20px;
+    @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+    position:relative;
+
+    &:hover {
+        .dish-list__item-body {
+            width:75%;
+            gap:10px;
+            transition-duration: 300ms;
+            margin-right:10px;
+        }
+
+
+        &::before{
+            content:"";
+            position:absolute;
+            top:0;
+            bottom:0;
+            right:0;
+            background-color: $tertiary_color;
+            border-radius: 0px 20px 20px 0px;
+            width:80px;
+            transform-origin: right;
+            animation: background_check 300ms;
+            
+        }
+
+        &::after {
+        
+                content:"\f058";
+                font-family: "Font Awesome 5 Free";
+                text-align: center;
+                font-weight: 900;
+                font-size:1.5em;
+                color:$light_color;
+                position:absolute;
+                top:30px;
+                right:30px;
+                animation: rotate_check 400ms;
+               
+                
+        }
+
+    }
+
+    &-body{
+        width:100%;
+        @include flexbox($justify-content:space-between);
+        flex-wrap: nowrap;
+    }
+
+    p{
+        margin:5px 0 5px 0;
+    }
+
+    &-p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width:100%;
+        
+
+   &--bold {
+        font-weight: 800;
+        align-self: flex-end;
+    }
+
+    &--regular {
+        font-size:0.9em;
+      
+
+    }
+    }
+
+   
+
+  
+}
+
+}
+@media (min-width:500px){
+    .dish-list__item:hover {
+
+        .dish-list__item-body
+        {width:80%;
+        }
+    }
+}
+@media (min-width:700px){
+    .dish-list__item:hover {
+
+        .dish-list__item-body
+        {width:85%;
+        }
+    }
+}
+
+@media (min-width:1000px){
+    .dish-list__item {
+    @include flexbox ($flex-direction:column);
+    width:30%;
+    text-align: center;
+
+    &:hover {
+
+        .dish-list__item-body {
+            width: auto;
+            gap:0;
+            transition-duration: 300ms;
+            margin-right:0;
+            z-index: 1;
+        }
+
+
+        &::before{
+            content:"";
+            position:absolute;
+            top:0;
+            bottom:0;
+            right:0;
+            background-color: $tertiary_color;
+            border-radius: 20px 20px 20px 20px;
+            width:100%;
+            transform-origin: right;
+            animation: background_check 300ms;
+            z-index: 0;
+            
+        }
+
+        &::after {
+        
+            content:"\f058";
+            font-family: "Font Awesome 5 Free";
+            text-align: center;
+            font-weight: 900;
+            font-size:1.5em;
+            color:$light_color;
+            position:absolute;
+            right:20px;
+            bottom:none;
+            left:none;
+            top:70px;
+            animation: rotate_check 300ms;
+           
+            
+    }
+           
+           
+            
+    }
+            
+        
+    
+
+    &-body {
+        @include flexbox ($flex-direction:column);
+    }
+
+
+    &-p{
+        white-space: inherit;
+        overflow: inherit;
+        text-overflow: inherit;
+
+
+    &--bold {
+        align-self: auto;
+    }
+}
+    }
+
+
+}
