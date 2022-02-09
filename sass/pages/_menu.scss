@@ -44,7 +44,7 @@
 
         h5{
             @include font($font-family:$title_font, $font-size:1.5em, $font-weight: 400);
-            width: 60%;
+            width: 80%;
         }
     }
 
@@ -86,7 +86,7 @@
 
 /* Liste des plats*/
 .dish-list {
-    @include flexbox($flex-direction: column, $justify-content:flex-start);
+    @include flexbox($flex-direction: column);
     gap:20px;
     list-style: none;
     padding-top:20px;

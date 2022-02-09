@@ -5,12 +5,17 @@
     width:100%;
     padding:15px;
     border-radius: 20px 20px 20px 20px;
-    @include flexbox($justify-content:space-between);
-    flex-wrap: nowrap;
     @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
     position:relative;
 
     &:hover {
+        .dish-list__item-body {
+            width:75%;
+            gap:10px;
+            transition-duration: 300ms;
+            margin-right:10px;
+        }
+
 
         &::before{
             content:"";
@@ -44,18 +49,36 @@
 
     }
 
+    &-body{
+        width:100%;
+        @include flexbox($justify-content:space-between);
+        flex-wrap: nowrap;
+    }
+
     p{
         margin:5px 0 5px 0;
     }
 
-    &--bold {
+    &-p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width:100%;
+        
+
+   &--bold {
         font-weight: 800;
-       align-self: flex-end;
+        align-self: flex-end;
     }
 
     &--regular {
         font-size:0.9em;
+      
+
     }
+    }
+
+   
 
   
 }

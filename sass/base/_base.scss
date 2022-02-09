@@ -11,16 +11,12 @@ transform: scaleX(0);
 
 @keyframes rotate_check {
     0% {
-      
         transform: translateX(100%) rotate(-1turn);
-   
         }
 
-        
         100%{
              transform: translateX(0%)rotate(0turn) ;
         
-          
         }
 }
 
