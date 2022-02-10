@@ -1,5 +1,4 @@
 
-Ajout de l'animation des coeurs 
-Ajout des pages menu (sans animation)
+Ajout de toutes les animations sur les pages menu. 
 
-Version: 5
+Version: 6
