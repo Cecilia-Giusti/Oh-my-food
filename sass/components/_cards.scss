@@ -8,6 +8,21 @@
     @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
     position:relative;
 
+    &::before{
+        content:"";
+        position:absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        background-color: $tertiary_color;
+        border-radius: 0px 20px 20px 0px;
+        width:80px;
+        transform-origin: right;
+        transform : scaleX(0);
+        transition: transform 300ms ease-in-out;
+        
+    }
+
     &:hover {
         .dish-list__item-body {
             width:75%;
@@ -18,16 +33,7 @@
 
 
         &::before{
-            content:"";
-            position:absolute;
-            top:0;
-            bottom:0;
-            right:0;
-            background-color: $tertiary_color;
-            border-radius: 0px 20px 20px 0px;
-            width:80px;
-            transform-origin: right;
-            animation: background_check 300ms;
+            transform : scaleX(1)
             
         }
 
@@ -106,6 +112,12 @@
     @include flexbox ($flex-direction:column);
     width:30%;
     text-align: center;
+    transition: transform 200ms ease-in-out;
+
+    &::before {
+        width:100%;
+        border-radius: 20px 20px;
+    }
 
     &:hover {
 
@@ -118,35 +130,14 @@
         }
 
 
-        &::before{
-            content:"";
-            position:absolute;
-            top:0;
-            bottom:0;
-            right:0;
-            background-color: $tertiary_color;
-            border-radius: 20px 20px 20px 20px;
-            width:100%;
-            transform-origin: right;
-            animation: background_check 300ms;
-            z-index: 0;
-            
-        }
 
         &::after {
-        
-            content:"\f058";
-            font-family: "Font Awesome 5 Free";
-            text-align: center;
-            font-weight: 900;
-            font-size:1.5em;
-            color:$light_color;
-            position:absolute;
             right:20px;
-            bottom:none;
-            left:none;
-            top:70px;
-            animation: rotate_check 300ms;
+            bottom:10px;
+            left:inherit;
+            top:inherit;
+            
+           
            
             
     }

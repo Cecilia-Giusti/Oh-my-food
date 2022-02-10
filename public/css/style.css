@@ -1,14 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
-@keyframes background_check {
-  0% {
-    transform: scaleX(0);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
 @keyframes rotate_check {
   0% {
     transform: translateX(100%) rotate(-1turn);
@@ -111,13 +103,7 @@
     transition-duration: 250ms;
     position: relative;
   }
-  .dish-list__item:hover .dish-list__item-body {
-    width: 75%;
-    gap: 10px;
-    transition-duration: 300ms;
-    margin-right: 10px;
-  }
-  .dish-list__item:hover::before {
+  .dish-list__item::before {
     content: "";
     position: absolute;
     top: 0;
@@ -127,7 +113,17 @@
     border-radius: 0px 20px 20px 0px;
     width: 80px;
     transform-origin: right;
-    animation: background_check 300ms;
+    transform: scaleX(0);
+    transition: transform 300ms ease-in-out;
+  }
+  .dish-list__item:hover .dish-list__item-body {
+    width: 75%;
+    gap: 10px;
+    transition-duration: 300ms;
+    margin-right: 10px;
+  }
+  .dish-list__item:hover::before {
+    transform: scaleX(1);
   }
   .dish-list__item:hover::after {
     content: "\f058";
@@ -184,6 +180,11 @@
     flex-direction: column;
     width: 30%;
     text-align: center;
+    transition: transform 200ms ease-in-out;
+  }
+  .dish-list__item::before {
+    width: 100%;
+    border-radius: 20px 20px;
   }
   .dish-list__item:hover .dish-list__item-body {
     width: auto;
@@ -192,32 +193,11 @@
     margin-right: 0;
     z-index: 1;
   }
-  .dish-list__item:hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: #99e2d0;
-    border-radius: 20px 20px 20px 20px;
-    width: 100%;
-    transform-origin: right;
-    animation: background_check 300ms;
-    z-index: 0;
-  }
   .dish-list__item:hover::after {
-    content: "\f058";
-    font-family: "Font Awesome 5 Free";
-    text-align: center;
-    font-weight: 900;
-    font-size: 1.5em;
-    color: white;
-    position: absolute;
     right: 20px;
-    bottom: none;
-    left: none;
-    top: 70px;
-    animation: rotate_check 300ms;
+    bottom: 10px;
+    left: inherit;
+    top: inherit;
   }
   .dish-list__item-body {
     display: flex;
@@ -821,7 +801,7 @@ main {
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
   }
 }
 

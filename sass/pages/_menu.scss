@@ -141,7 +141,7 @@
     
     .dish-list {
         @include flexbox($flex-direction: row, $align-items:flex-start);
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
     }
 }
 
