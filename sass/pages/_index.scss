@@ -6,7 +6,7 @@ main {
 
 /*Premiere section  */
 
-.section-primary{
+.presentation{
     @include flexbox($flex-direction:column);
     width:$tall_dimension;
 }
@@ -40,7 +40,7 @@ main {
 
 /*Présentation */
 @media all{
-    .art-presentation {
+    .section-presentation {
         width:$tall_dimension;
         background-color: $background_color_light;
         text-align: center;
@@ -64,7 +64,7 @@ main {
 }}
 
 @media (min-width: 1000px) {
-    .art-presentation{
+    .section-presentation{
         height: 300px;
         @include flexbox($flex-direction:column);
         gap:10px;
@@ -165,7 +165,7 @@ aside {
 }
 
 @media (min-width: 1000px) {
-.section-primary {
+.presentation {
     @include flexbox ($flex-direction:row);
     flex-wrap : wrap;
 }
