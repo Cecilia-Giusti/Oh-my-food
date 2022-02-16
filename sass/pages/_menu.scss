@@ -2,143 +2,176 @@
 /* Page menu */
 @media all {
 
-/* Corps de la page */
-.main-menu {
-    width: $tall_dimension;
-    background-color: $background_color_light;
+    /* Corps de la page */
 
-   
+    .main-menu {
+        //Dimension
+        width: $tall_dimension;
 
-    /* Images du restaurant */
-    &__img {
-        width:100%;
-        height:300px;
-        max-height:400px;
-        overflow: hidden;
-        
-        z-index:-1;
-        img {
+        //Couleur
+        background-color: $background_color_light;
+
+        /* Images du restaurant */
+        &__img {
+
+            //Dimension
             width:100%;
             height:300px;
             max-height:400px;
+
+            //Image
+            overflow: hidden;
+            
+            //Positionnement
             z-index:-1;
-            -o-object-fit: cover;
-               object-fit: cover;
+
+            img {
+
+                //Dimension
+                width:100%;
+                height:300px;
+                max-height:400px;
+
+                //Positionnement
+                z-index:-1;
+
+                //Image
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+    }    
+
+    /* Section du menu*/
+    .section-menu {
+
+        //Positionnement
+        @include flexbox($flex-direction:column, $align-items:flex-start);
+        z-index:1;
+        position:relative;
+
+        //Couleur
+        background-color: $background_color_light;
+
+        //Bordure
+        border-radius : 30px 30px 0 0 ;
+        
+        //Dimension
+        bottom:30px;
+
+        /*Nom du restaurant*/
+        &__title {
+            //Positionnement
+            @include flexbox($justify-content:space-between, $flex-direction:row);
+            position:relative;
+
+            //Dimension
+            width:90%;
+            margin:auto;
+
+            h5{
+
+                //Police
+                @include font($font-family:$title_font, $font-size:1.5em, $font-weight: 400);
+
+                //Dimension
+                width: 80%;
+            }
         }
     }
-}    
-/* Section du menu*/
-.section-menu {
-    @include flexbox($flex-direction:column, $align-items:flex-start);
-    background-color: $background_color_light;
-    border-radius : 30px 30px 0 0 ;
-    z-index:1;
-    position:relative;
-    bottom:30px;
 
-     /*Nom du restaurant*/
-    &__title {
-        @include flexbox($justify-content:space-between, $flex-direction:row);
-        position:relative;
+    /*Section du menu*/
+    .section-dish {
         width:90%;
         margin:auto;
 
-        h5{
-            @include font($font-family:$title_font, $font-size:1.5em, $font-weight: 400);
-            width: 80%;
+        /* Titre, entrées plats et desserts*/
+        h6{
+            //Police
+            @include font($font-size:1em, $font-weight:400);
+            text-transform: uppercase;
+
+            //Dimension
+            margin: 0 0 0 0;
+
+            //Position
+            position:relative;
+
+
+            /* Trait de décoration sous le titre*/
+            &::after {
+                content: "";
+
+                //Position
+                @include absolute ($top:20px, $right:0, $bottom:0, $left:0);
+                
+                //Dimension
+                width:40px;
+                height:3px;
+
+                //Couleur
+                background-color: $tertiary_color;  
+            }
         }
     }
 
-}
-/*Section du menu*/
-.section-dish {
-    width:90%;
-    margin:auto;
+    /* Liste des plats*/
+    .dish-list {
+        //Positionnement
+        @include flexbox($flex-direction: column);
+        gap:20px;
 
-    /* Titre, entrées plats et desserts*/
-    h6{
-        @include font($font-size:1em, $font-weight:400);
-        text-transform: uppercase;
-        margin: 0 0 0 0;
-        position:relative;
+        //Style des puces
+        list-style: none;
 
-
-/* Trait de décoration sous le titre*/
-        &::after {
-            content: "";
-            position: absolute;
-            top: 20px;
-            right: 0;
-            bottom: 0;
-            left: 0; 
-            width:40px;
-            height:3px;
-            background-color: $tertiary_color;  
-        }
-
-        
-        }
-
-
-
-
-
+        //Dimension
+        padding-top:20px;
+        padding-bottom:40px;
+        width:90%;
+        margin:auto;
     }
 
-/* Liste des plats*/
-.dish-list {
-    @include flexbox($flex-direction: column);
-    gap:20px;
-    list-style: none;
-    padding-top:20px;
-    padding-bottom:40px;
-    width:90%;
-    margin:auto;
-}
+    .art-dish__button--position {
+        //Positionnement 
+        text-align: center;
 
-.art-dish__button--position {
-     text-align: center;
-     width:100%;
-    button{
-        margin-top:20px;
-        padding: 15px 40px 15px 40px;
-       
+        //Dimension
+        width:100%;
+
+        button{
+            margin-top:20px;
+            padding: 15px 40px 15px 40px;
+        }
     }
-}
-
 }
 
 @media (min-width:500px){
 
-.section-dish {
+    .section-dish {
+        width:80%;
 
-    width:80%;
+        h6 {
+            text-align: center;
 
-    h6 {
-        text-align: center;
-
-        /* Trait de décoration sous le titre*/
-        &::after {
-            width:100%;
+            /* Trait de décoration sous le titre*/
+            &::after {
+                width:100%;
+            }
         }
     }
-   
-}
 }
 
 @media (min-width:1000px){
+
     .main-menu__img {
-        
         height:700px;
         max-height:800px;
     
-    img {
-      
-    height:700px;
-    max-height:800px;
-        
+        img {
+        height:700px;
+        max-height:800px;
+        }
     }
-}
     
     .dish-list {
         @include flexbox($flex-direction: row, $align-items:flex-start);

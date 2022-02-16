@@ -13,27 +13,35 @@ main {
 
 
 @media all {
-/*Localisation */
 
-.location {
-    background-color: $background_color_medium;
-    @include flexbox;
-    gap:10px;
-    @include font($font-size:1em, $font-weight:600);
-    width:$tall_dimension;
+    /*Localisation */
+    .location {
 
-    p {
-        margin: 15px 0 15px 0;
+        //Couleur
+        background-color: $background_color_medium;
+
+        //Position
+        @include flexbox;
+        gap:10px;
+
+        //Police
+        @include font($font-size:1em, $font-weight:600);
+
+        //Dimension
+        width:$tall_dimension;
+
+        p {
+            margin: 15px 0 15px 0;
+        }
     }
-}
 
-}
+    }
 
 @media (min-width: 1400px) {
-.location {
-    width:50%;
-    max-width: 500px;
-}
+    .location {
+        width:50%;
+        max-width: 500px;
+    }
 }
 
 
@@ -41,31 +49,46 @@ main {
 /*Présentation */
 @media all{
     .section-presentation {
+
+        //Dimension
         width:$tall_dimension;
-        background-color: $background_color_light;
-        text-align: center;
         padding: 40px 0 40px 0;
 
+        //Couleur
+        background-color: $background_color_light;
+
+        //Positionnement
+        text-align: center;
+        
         h2 {
+
+            //Dimension
             margin:auto;
             margin-top:0;
             width:70%;
+
+            //Police
             @include font($font-size: 1.3em, $font-weight:900);
         }
 
         p {
+            //Couleur
             color: $background_color_footer;
+
+            //Dimension
             width:80%;
             margin:auto;
             padding:20px 0 30px 0;
-            
         }
-
-}}
+    }
+}
 
 @media (min-width: 1000px) {
     .section-presentation{
+        //Dimension
         height: 300px;
+
+        //Position
         @include flexbox($flex-direction:column);
         gap:10px;
 
@@ -77,42 +100,60 @@ main {
 
 /*Fonctionnement */
 @media all {
-aside {
-    width:90%;
-    margin:auto;
+    aside {
+        width:90%;
+        margin:auto;
 
-    h3 {
-        @include font ($font-size:1.4em);
-    }
+        h3 {
+            @include font ($font-size:1.4em);
+        }
 }
 
 /*Etapes du fonctionnement du site*/
 
 .list {
+    //Positionnement
     @include flexbox($flex-direction:column);
     gap: 20px;
+
+    //Dimension
     margin:auto;
     margin-bottom:40px;
-    padding: 0px;
-    list-style: none;
     width:80%;
-    
+    padding: 0px;
 
-    &__item { //items de la liste
+    //Style des puces
+    list-style: none;
+    
+    //items de la liste
+    &__item { 
+
+        //Dimension
         height: 25px;
         width:$tall_dimension;
         max-width: 250px;
+        padding:20px 18px 20px 18px;
+
+        //Positionnement
         @include flexbox($justify-content:flex-start);
         gap:20px;
-        background-color: $background_color_light;
-        padding:20px 18px 20px 18px;
-        border-radius: 15px;
-        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
-        @include font($font-size:0.9em, $font-weight:500);
         position :relative;
         z-index: 1;
 
-        &:hover {// Transition au survol 
+        //Couleur
+        background-color: $background_color_light;
+        
+        //Bordure
+        border-radius: 15px;
+
+        //Ombre portée
+        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+
+        //Police
+        @include font($font-size:0.9em, $font-weight:500);
+    
+        // Transition au survol 
+        &:hover {
             i {
                 color:$primary_color;
             }
@@ -124,32 +165,42 @@ aside {
 
         &::after {
             content:"";
+
+            //Opacité
             opacity:0;
+
+            //Couleur
             background-color:lighten($primary_color,35%);
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+
+            //Position
+            @include absolute (0, 0, 0, 0);
             z-index: -1;
+
+            //Bordure
             border-radius: 15px;
+
+            //Ombre portée
             @include boxshadow($box-shadow:4px 5px 20px 0px rgba(0, 0, 0, 0.158) );
         }
 
-        &--circle{ //cercle autour des chiffres
+        //cercle autour des chiffres
+        &--circle{ 
+            //Dimension
             width: 22px;
             height: 22px;
-            border-radius: 50%;
             font-size: 0.8em;
+
+            //Bordure
+            border-radius: 50%;
+
+            //Couleurs
             background-color: $primary_color;
             color:$light_color;
-            @include flexbox;
-            position:absolute;
-            top:22px;
-            left:-10px;
-        }
 
-        
+            //Positionnement
+            @include flexbox;
+            @include absolute($top:22px, $left:-10px);
+        } 
     }
 }
 
@@ -157,42 +208,57 @@ aside {
 
 @media (min-width: 500px) {
 
-.list {
-    width: $tall_dimension;
-    @include flexbox ($justify-content:space-around, $flex-direction:row);
-    flex-wrap: wrap;
-}
-}
+    .list {
+        //Dimension
+        width: $tall_dimension;
 
-@media (min-width: 1000px) {
-.presentation {
-    @include flexbox ($flex-direction:row);
-    flex-wrap : wrap;
-}
-
-.location {
-    order: 2;
-    width:30%;
-    margin-left:10%;
-    border-radius: 30px;
-    box-shadow: inset 2px 5px 6px rgba(0, 0, 0, 0.13);
-}
-
-aside {
-    order:3;
-    width:40%;
-
-    h3 {
-        text-align: center;
+        //Positionnement
+        @include flexbox ($justify-content:space-around, $flex-direction:row);
+        flex-wrap: wrap;
     }
 }
 
-.list {
-    width: $tall_dimension;
-    @include flexbox($flex-direction:column);
-    flex-wrap: nowrap;
-    
-}
+@media (min-width: 1000px) {
+    .presentation {
+        @include flexbox ($flex-direction:row);
+        flex-wrap : wrap;
+    }
+
+    .location {
+        //Positionnement
+        order: 2;
+
+        //Dimension
+        width:30%;
+        margin-left:10%;
+
+        //Bordure
+        border-radius: 30px;
+
+        //Ombre portée
+        box-shadow: inset 2px 5px 6px rgba(0, 0, 0, 0.13);
+    }
+
+    aside {
+        //Positionnement
+        order:3;
+
+        //Dimension
+        width:40%;
+
+        h3 {
+            text-align: center;
+        }
+    }
+
+    .list {
+        //Dimension
+        width: $tall_dimension;
+
+        //Positionnement
+        @include flexbox($flex-direction:column);
+        flex-wrap: nowrap;
+    }
 }
 
 
@@ -211,127 +277,150 @@ aside {
 /* Section des restaurants */
 @media all {
 
-.section-restaurants {
-    width: $tall_dimension;
-    background-color: $background_color_light;
-    padding:40px 0px 40px;
-    h3 {
-        @include font;
-        margin-left:5%;
-    }
+    .section-restaurants {
+        //Dimension
+        width: $tall_dimension;
+        padding:40px 0px 40px;
 
-    &--flex {
-        @include flexbox($flex-direction:column);
-        gap:20px;
-    }
-}
-
-/* Cartes des restaurants */
-
-.art-restaurant{
-    width:90%;
-    max-width: 350px;
-    margin:auto;
-    background-color: $light_color;
-    border-radius : 20px 20px 20px 20px;
-    position:relative;
-    box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
-    transition-duration: 250ms;
-
-    &:hover {
-        @include boxshadow;
-        opacity: 90%;
-    }
-
-    a{
-        text-decoration: none;
-        color: $dark_color;
-    }
-
-    
-    &__img {
-        @include flexbox;
-        border-radius : 20px 20px 0px 0px;
-        overflow: hidden;
-        height: 150px;
-    
-        img {
-            width:$tall_dimension;
-            -o-object-fit: contain;
-               object-fit: contain;
+        //Couleur
+        background-color: $background_color_light;
+        
+        //Nom du restaurant
+        h3 {
+            @include font;
+            margin-left:5%;
         }
 
+        &--flex {
+            @include flexbox($flex-direction:column);
+            gap:20px;
+        }
     }
 
-    &__new {
-        background-color: $tertiary_color;
-        color: darken($tertiary_color, 40%);
-        @include font($font-size:0.8em, $font-weight: 600);
-        padding:8px 10px 8px 10px;
-        position:absolute;
-        top:0;
-        right:10px;
+    /* Cartes des restaurants */
+
+    .art-restaurant{
+        //Dimension
+        width:90%;
+        max-width: 350px;
+        margin:auto;
+
+        //Couleur
+        background-color: $light_color;
+
+        //Bordure
+        border-radius : 20px 20px 20px 20px;
+
+        //Position
+        position:relative;
+
+        //Ombre portée
+        @include boxshadow($box-shadow:4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+
+        &:hover {
+            //Ombre portée
+            @include boxshadow;
+
+            //Opacité
+            opacity: 90%;
         }
 
-    &__body {
-        margin-top:10px;
-        @include flexbox($justify-content:space-between);
-        padding: 10px 15px 20px 15px;
-
-        h4 {
-            @include font ($font-size:1em, $font-weight:900);
-            margin:0;
-        }
-
-        p {
-            margin:5px 0px 0px 0px;
+        a{
+            text-decoration: none;
+            color: $dark_color;
         }
 
 
+        &__img {
+            //Positionnement
+            @include flexbox;
 
+            //Bordure
+            border-radius : 20px 20px 0px 0px;
+
+            //Image
+            overflow: hidden;
+            height: 150px;
+
+            img {
+                //Dimension
+                width:$tall_dimension;
+
+                //Image
+                -o-object-fit: contain;
+                    object-fit: contain;
+            }
+        }
+
+        &__new {
+            //Couleurs
+            background-color: $tertiary_color;
+            color: darken($tertiary_color, 40%);
+
+            //Police
+            @include font($font-size:0.8em, $font-weight: 600);
+
+            //Dimension
+            padding:8px 10px 8px 10px;
+
+            //Positionnement
+            @include absolute ($top:0, $right:10px);
+            }
+
+        &__body {
+            //Dimension
+            margin-top:10px;
+            padding: 10px 15px 20px 15px;
+
+            //Positionnement
+            @include flexbox($justify-content:space-between);
+            
+            //Nom du restaurant
+            h4 {
+                @include font ($font-size:1em, $font-weight:900);
+                margin:0;
+            }
+
+            p {
+                margin:5px 0px 0px 0px;
+            }
+        }
     }
-
-
-}
-
 }
 
 @media (min-width: 500px) {
 
-.section-restaurants{
-    
+    .section-restaurants{
 
-    &--flex{
-    @include flexbox;
-    flex-wrap:wrap;
-    
+        &--flex{
+            //Positionnement
+            @include flexbox;
+            flex-wrap:wrap;
+        }
+
+        h3 {
+            text-align: center;
+            margin-left:0;
+        }
     }
 
-    h3 {
-        text-align: center;
-        margin-left:0;
+    .art-restaurant {
+        margin:0;
+
+        &__new {
+            @include font($font-size:1.2em);
+            right:15px;
+        }
     }
-}
-
-.art-restaurant {
-    margin:0;
-
-    &__new {
-        @include font($font-size:1.2em);
-        right:15px;
-    }
-}
-
 }
 
 @media (min-width: 1000px) {
     .section-restaurants{
-       
+        
         &--flex {
             width:90%;
             gap:30px;
             margin:auto;
-    
         }
     }
 
@@ -342,7 +431,6 @@ aside {
         &__img {
             height: 200px;
         }
-
     }
 }
 
