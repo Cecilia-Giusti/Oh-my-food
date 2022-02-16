@@ -1,6 +1,7 @@
 
 .spinner-opacity {
-  animation: opacity-reverse 6s linear;
+  -webkit-animation: opacity-reverse 6s linear;
+          animation: opacity-reverse 6s linear;
 }
 
 .container-loading{
@@ -11,7 +12,8 @@ position: absolute;
 top:100px;
 left:0;
 opacity: 0;
-animation: opacity 3s ease-in-out;
+-webkit-animation: opacity 3s ease-in-out;
+        animation: opacity 3s ease-in-out;
 
 
 }
@@ -26,7 +28,8 @@ animation: opacity 3s ease-in-out;
     border:5px solid transparent;
     border-top-color:$primary-color;
       opacity: 0;
-    animation : spinner 3s linear;   
+    -webkit-animation : spinner 3s linear;
+            animation : spinner 3s linear;   
       
   
      &::before {
@@ -43,7 +46,9 @@ animation: opacity 3s ease-in-out;
         border-top-color:#C466DA;
         border-radius: 200px;
 
-        animation : spinner 5s linear;   
+        -webkit-animation : spinner 5s linear;
+
+                animation : spinner 5s linear;   
 
 
  }
@@ -60,7 +65,8 @@ animation: opacity 3s ease-in-out;
     border: 3px solid transparent;
     border-top-color:$secondary-color;
     border-radius: 200px;
-    animation : spinner 8s linear;   
+    -webkit-animation : spinner 8s linear;
+            animation : spinner 8s linear;   
       
 
   }
@@ -68,7 +74,8 @@ animation: opacity 3s ease-in-out;
   &__text {
     @include font($font-family:$title-font, $font-size:40px);
     position: absolute;
-    animation: spinner-text 1s linear;
+    -webkit-animation: spinner-text 1s linear;
+            animation: spinner-text 1s linear;
   }
   
 }

@@ -1,12 +1,32 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2? family= Roboto:wght@100;300;400;500;700;900 & display=swap");
+@-webkit-keyframes rotate_check {
+  0% {
+    transform: translateX(100%) rotate(-1turn);
+  }
+  100% {
+    transform: translateX(0%) rotate(0turn);
+  }
+}
 @keyframes rotate_check {
   0% {
     transform: translateX(100%) rotate(-1turn);
   }
   100% {
     transform: translateX(0%) rotate(0turn);
+  }
+}
+@-webkit-keyframes apparition {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  85%, 100% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 @keyframes apparition {
@@ -21,6 +41,15 @@
     transform: translateY(0px);
   }
 }
+@-webkit-keyframes spinner {
+  0% {
+    transform: rotate(0turn);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(3turn);
+  }
+}
 @keyframes spinner {
   0% {
     transform: rotate(0turn);
@@ -28,6 +57,16 @@
   }
   100% {
     transform: rotate(3turn);
+  }
+}
+@-webkit-keyframes spinner-text {
+  0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+    transform: scaleY(1);
   }
 }
 @keyframes spinner-text {
@@ -40,12 +79,34 @@
     transform: scaleY(1);
   }
 }
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes opacity {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes opacity-reverse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @keyframes opacity-reverse {
@@ -156,7 +217,8 @@
     box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158);
     transition-duration: 250ms;
     position: relative;
-    animation: apparition 2000ms;
+    -webkit-animation: apparition 2000ms;
+            animation: apparition 2000ms;
   }
   .dish-list__item::before {
     content: "";
@@ -190,7 +252,8 @@
     position: absolute;
     top: 30px;
     right: 30px;
-    animation: rotate_check 400ms;
+    -webkit-animation: rotate_check 400ms;
+            animation: rotate_check 400ms;
   }
   .dish-list__item-body {
     width: 100%;
@@ -270,7 +333,8 @@
   }
 }
 .spinner-opacity {
-  animation: opacity-reverse 6s linear;
+  -webkit-animation: opacity-reverse 6s linear;
+          animation: opacity-reverse 6s linear;
 }
 
 .container-loading {
@@ -284,7 +348,8 @@
   top: 100px;
   left: 0;
   opacity: 0;
-  animation: opacity 3s ease-in-out;
+  -webkit-animation: opacity 3s ease-in-out;
+          animation: opacity 3s ease-in-out;
 }
 
 .loader {
@@ -301,7 +366,8 @@
   border: 5px solid transparent;
   border-top-color: #9356dc;
   opacity: 0;
-  animation: spinner 3s linear;
+  -webkit-animation: spinner 3s linear;
+          animation: spinner 3s linear;
 }
 .loader__spinner::before {
   content: "";
@@ -314,7 +380,8 @@
   border: 4px solid transparent;
   border-top-color: #C466DA;
   border-radius: 200px;
-  animation: spinner 5s linear;
+  -webkit-animation: spinner 5s linear;
+          animation: spinner 5s linear;
 }
 .loader__spinner::after {
   content: "";
@@ -327,14 +394,16 @@
   border: 3px solid transparent;
   border-top-color: #ff79da;
   border-radius: 200px;
-  animation: spinner 8s linear;
+  -webkit-animation: spinner 8s linear;
+          animation: spinner 8s linear;
 }
 .loader__text {
   font-size: 40px;
   font-weight: 900;
   font-family: "Shrikhand", sans-serif;
   position: absolute;
-  animation: spinner-text 1s linear;
+  -webkit-animation: spinner-text 1s linear;
+          animation: spinner-text 1s linear;
 }
 
 @media all {
@@ -392,11 +461,16 @@
   }
 
   ul {
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0;
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+    -webkit-margin-start: 0px;
+            margin-inline-start: 0px;
+    -webkit-margin-end: 0px;
+            margin-inline-end: 0px;
+    -webkit-padding-start: 0;
+            padding-inline-start: 0;
   }
 }
 /*Footer */
@@ -727,7 +801,8 @@ main {
   }
   .art-restaurant__img img {
     width: 100%;
-    object-fit: contain;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .art-restaurant__new {
     background-color: #99e2d0;
@@ -816,7 +891,8 @@ main {
     height: 300px;
     max-height: 400px;
     z-index: -1;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 
   /* Section du menu*/
@@ -928,5 +1004,3 @@ main {
     flex-wrap: nowrap;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
