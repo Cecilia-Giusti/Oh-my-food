@@ -183,16 +183,16 @@
 }
 .btn__heart--position {
   position: absolute;
-  top: none;
-  left: none;
+  top: unset;
+  left: unset;
   bottom: 30px;
   right: 30px;
 }
 .btn__heart--menu-position {
   position: absolute;
-  top: none;
-  left: none;
-  bottom: none;
+  top: unset;
+  left: unset;
+  bottom: unset;
   right: 20px;
 }
 .btn__heart--full {
@@ -201,7 +201,6 @@
   -webkit-background-clip: text;
   color: transparent;
   transform: scale(0);
-  transform-origin: 0, 50%;
   transition: transform 500ms ease-in-out;
 }
 .btn__heart--border {
@@ -225,7 +224,7 @@
     content: "";
     position: absolute;
     top: 0;
-    left: none;
+    left: unset;
     bottom: 0;
     right: 0;
     background-color: #99e2d0;
@@ -253,8 +252,8 @@
     color: white;
     position: absolute;
     top: 30px;
-    left: none;
-    bottom: none;
+    left: unset;
+    bottom: unset;
     right: 30px;
     -webkit-animation: rotate_check 400ms;
     animation: rotate_check 400ms;
@@ -351,8 +350,8 @@
   position: absolute;
   top: 100px;
   left: 0;
-  bottom: none;
-  right: none;
+  bottom: unset;
+  right: unset;
   opacity: 0;
   -webkit-animation: opacity 3s ease-in-out;
   animation: opacity 3s ease-in-out;
@@ -695,8 +694,8 @@ main {
     position: absolute;
     top: 22px;
     left: -10px;
-    bottom: none;
-    right: none;
+    bottom: unset;
+    right: unset;
   }
 }
 @media (min-width: 500px) {
@@ -821,8 +820,8 @@ main {
     padding: 8px 10px 8px 10px;
     position: absolute;
     top: 0;
-    left: none;
-    bottom: none;
+    left: unset;
+    bottom: unset;
     right: 10px;
   }
   .art-restaurant__body {
