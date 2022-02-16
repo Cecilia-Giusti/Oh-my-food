@@ -1,44 +1,54 @@
 
 @media all{
 
-header {
-    width: $tall_dimension;
-    height: 70px;
-    margin:auto;
-    box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.151);
-    @include flexbox;
-    z-index: 1;
+    header {
 
-    h1 {
-        @include font($font-size: 2em, $font-weight:500, $font-family:$title_font);
+        //Dimension
+        width: $tall_dimension;
+        height: 70px;
+        margin:auto;
+
+        //Ombre portée
+        @include boxshadow ($box-shadow:2px 3px 5px 0px rgba(0, 0, 0, 0.151));
+
+        //Positionnement
         @include flexbox;
-        flex-grow:1;
-    }
-    a {
-        color: $dark_color;
+        z-index: 1;
+
+        //Logo
+        h1 {
+            //Police
+            @include font($font-size: 2em, $font-weight:500, $font-family:$title_font);
+
+            //Positionnement
+            @include flexbox;
+            flex-grow:1;
+        }
+
+        a {
+            color: $dark_color;   
+            }
+        
+        //Fleche de retour
+        i {
+            visibility: hidden;
             
-        }
-        
-    i {
-        visibility: hidden;
-        
-        &.visible {
-            visibility: visible;
-            padding-left:20px;
-        }
+            &.visible {
+                visibility: visible;
+                padding-left:20px;
+            }
+        }  
     }
-
-    
-}
-
 }
 
 @media (min-width: 1000px) {
 
+    //Logo
     header h1 {
+        // Positionnement
         justify-content: flex-start;
+
+        //Dimension
         margin-left:40px;
     }
-
-
 }

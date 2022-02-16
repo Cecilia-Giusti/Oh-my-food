@@ -1,76 +1,106 @@
 
+//Apparition de la page d'accueil
 .spinner-opacity {
-  animation: opacity-reverse 6s linear;
+  -webkit-animation: opacity-reverse 5s linear;
+          animation: opacity-reverse 5s linear;
 }
 
+// Conteneur du loading spinner
 .container-loading{
-width:100%;
-height: 500px;
-@include flexbox;
-position: absolute;
-top:100px;
-left:0;
-opacity: 0;
-animation: opacity 3s ease-in-out;
 
+  //Dimension
+  width:100%;
+  height: 500px;
 
+  //Positionnement
+  @include flexbox;
+  @include absolute ($top:100px, $left:0);
+  
+  //Opacité
+  opacity: 0;
+
+  //Animation
+  -webkit-animation: opacity 3s ease-in-out;
+          animation: opacity 3s ease-in-out;
 }
+
+//Loading spinner
 .loader {
-  width:200px;
+
+  //Dimension
+    width:200px;
     height: 200px;
+
+    //Positionnement
     @include flexbox;
     position:relative;
 
+  //Bordures
   &__spinner {
+
+    //Bordures
     border-radius: 200px;
     border:5px solid transparent;
     border-top-color:$primary-color;
-      opacity: 0;
-    animation : spinner 3s linear;   
-      
-  
-     &::before {
-        content:"";
-        position:absolute;
-        top:10px;
-        left:10px;
-        right: 10px;
-        bottom: 10px;
-        opacity: 0;
-
-
-        border: 4px solid transparent;
-        border-top-color:#C466DA;
-        border-radius: 200px;
-
-        animation : spinner 5s linear;   
-
-
- }
-
-  &::after {
-    content:"";
-    position:absolute;
-    top:25px;
-    left:25px;
-    right: 25px;
-    bottom: 25px;
+    
+    //Opacité
     opacity: 0;
 
-    border: 3px solid transparent;
-    border-top-color:$secondary-color;
-    border-radius: 200px;
-    animation : spinner 8s linear;   
+    //Animation
+    -webkit-animation : spinner 3s linear;
+            animation : spinner 3s linear;   
       
-
-  }
-}
-  &__text {
-    @include font($font-family:$title-font, $font-size:40px);
-    position: absolute;
-    animation: spinner-text 1s linear;
-  }
   
+    &::before {
+      content:"";
+
+      //Positionnement
+      @include absolute(10px, 10px, 10px, 10px);
+
+      //Opacité
+      opacity: 0;
+
+      //Bordure
+      border: 4px solid transparent;
+      border-top-color:#C466DA;
+      border-radius: 200px;
+
+      //Animation
+      -webkit-animation : spinner 5s linear;
+              animation : spinner 5s linear;   
+      } 
+
+    &::after {
+      content:"";
+
+      //Positionnement
+      @include absolute (25px, 25px, 25px, 25px);
+      
+      //Opacité
+      opacity: 0;
+
+      //Bordure
+      border: 3px solid transparent;
+      border-top-color:$secondary-color;
+      border-radius: 200px;
+
+      //Animation
+      -webkit-animation : spinner 8s linear;
+              animation : spinner 8s linear;   
+    }
+  }
+
+  &__text {
+    //Police
+    @include font($font-family:$title-font, $font-size:40px);
+
+    //Positionnement
+    position: absolute;
+
+    //Animation
+    -webkit-animation: spinner-text 1s linear;
+            animation: spinner-text 1s linear;
+  }
 }
 
 

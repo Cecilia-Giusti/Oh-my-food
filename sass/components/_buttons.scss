@@ -1,36 +1,53 @@
 
 /*Bouton principal */
-
 .btn-main {
 
     //Bouton normal 
+
+        //Couleurs
         color :$light_color;
         background: $gradient;
-        box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.26);
-        border-radius: 50px;
+
+        //Ombre portée
+        @include boxshadow($box-shadow:2px 5px 6px rgba(0, 0, 0, 0.26) );
+
+        //Bordures
+        border-radius: $btn-main__border;
         border:none;
+
+        //Polices
         @include font($font-size:0.8em, $font-weight: 400);
+
+        //Padding 
         padding:15px 18px 15px 18px;
+
+        //Position
         position:relative;
         z-index: 1;
 
-        &:hover {// Transition au survol 
+        // Transition au survol 
+        &:hover {
             &::after{
                 opacity:1;
             }
         }
 
-        &::after { //Bouton au survol
+        //Bouton au survol
+        &::after { 
             content:"";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
+
+            //Position 
+            @include absolute(0,0,0,0);
+            z-index: -1;
+
+            //Couleurs et opacité
             background:$gradient_light;
             opacity: 0;
-            z-index: -1;
-            border-radius: 50px;
+            
+            //Bordures
+            border-radius: $btn-main__border;
+
+            // Ombre portée
             @include boxshadow;
         }
     }
@@ -38,21 +55,25 @@
 
 /*Bouton coeur */
 .btn {
+
+    // Position 
     @include flexbox;
+
+    //Image du curseur
     cursor: pointer;
     
-   
-    &:hover{//Animation
+   //Animation au survol
+    &:hover{
 
-        //Coeur avec bordure
+        //Couleur du coeur avec bordure
         .btn__heart--border {
             background:$gradient;
-            background-clip:text;
             -webkit-background-clip:text;
+                background-clip:text;
             color:transparent;
         } 
 
-        //Coeur rempli
+        //Remplissage du coeur 
         .btn__heart--full {
             transform:scale(1);  
         }

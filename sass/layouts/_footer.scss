@@ -1,45 +1,54 @@
 /*Footer */
 @media all{
-footer {
-    background-color: $background_color_footer;
-    width:$tall_dimension;
-    box-sizing: border-box;
-    @include flexbox($align-items:flex-start, $flex-direction:column);
-    
-    .footer__logo {
-        color: $light_color;
-        @include font($font-size:1.2em, $font-weight: 400, $font-family:$title_font);
-        font-weight: normal;
-        margin: 20px 0 10px 20px;
+    footer {
+        //Couleurs
+        background-color: $background_color_footer;
+
+        //Dimension
+        width:$tall_dimension;
+        box-sizing: border-box;
+
+        //Positionnement
+        @include flexbox($align-items:flex-start, $flex-direction:column);
         
-    }
+        .footer__logo {
 
-    ul{
-        margin: 0 0 40px 20px;
-        padding:0;
-    }
+            //Couleurs
+            color: $light_color;
 
-    li {
-        list-style-type: none;
-        margin-top:8px;
-    }
+            //Police
+            @include font($font-size:1.2em, $font-weight: 400, $font-family:$title_font);
 
-    a {
-        color : $light_color;
-        text-decoration:none;
-        
-        i{
-            width:20px;
+            //Dimension
+            margin: 20px 0 10px 20px;
         }
 
+        ul{
+            margin: 0 0 40px 20px;
+            padding:0;
+        }
+
+        li {
+            list-style-type: none;
+            margin-top:8px;
+        }
+
+        a {
+            color : $light_color;
+            text-decoration:none;
+            
+            i{
+                width:20px;
+            }
+        }
     }
-}
 
 }
 
 @media (min-width:500px) {
     footer {
-      @include flexbox;
+        //Positionnement
+        @include flexbox;
         gap: 50px;
 
         .footer__logo {
@@ -55,15 +64,16 @@ footer {
 
 @media (min-width:1000px) {
     ul {
+        //Positionnement
         @include flexbox($justify-content:space-around);
+
+        //Dimension
         width: 80%;
 
         li {
             margin-top:0;
         }
     }
-
-
 }
 
 
