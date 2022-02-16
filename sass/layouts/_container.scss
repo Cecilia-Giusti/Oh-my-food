@@ -8,6 +8,7 @@
     font-family: $text_font;
     color: $dark_color;
     @include flexbox($flex-direction:column);
+    position:relative;
 }
 
 ul {
