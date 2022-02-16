@@ -1,4 +1,5 @@
 
-Ajout de toutes les animations sur les pages menu. 
+Ajout du loading spinner
+Refactorisation du code 
 
-Version: 6
+Version: 7
