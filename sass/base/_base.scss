@@ -1,10 +1,11 @@
+// Check des menus
 @keyframes rotate_check {
     0% {
         transform: translateX(100%) rotate(-1turn);
         }
 
         100%{
-             transform: translateX(0%)rotate(0turn) ;
+             transform: translateX(0%) rotate(0turn) ;
         
         }
 }
@@ -24,6 +25,66 @@
         
     }
 }
+
+//Loading spinner
+@keyframes spinner {
+  0%{
+    transform: rotate(0turn);
+    opacity: 1;
+  }
+
+  100%{
+  transform: rotate(3turn);
+
+  }
+}
+
+@keyframes spinner-text  {
+
+  0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  
+}
+
+@keyframes opacity {
+  0%{
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes opacity-reverse {
+  0% {
+    opacity: 0;
+  }
+
+  50%{
+    opacity:0 ;
+  }
+  70%{
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+  
+}
+
+
+
+  
 
 
 
