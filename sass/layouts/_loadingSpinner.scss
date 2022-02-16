@@ -1,5 +1,5 @@
 
-header, main {
+.spinner-opacity {
   animation: opacity-reverse 6s linear;
 }
 
@@ -43,9 +43,7 @@ animation: opacity 3s ease-in-out;
         border-top-color:#C466DA;
         border-radius: 200px;
 
-        animation-name: spinner;
-        animation-duration: 5s;
-        animation-timing-function: linear;
+        animation : spinner 5s linear;   
 
 
  }
@@ -62,9 +60,7 @@ animation: opacity 3s ease-in-out;
     border: 3px solid transparent;
     border-top-color:$secondary-color;
     border-radius: 200px;
-    animation-name: spinner;
-    animation-duration: 8s;
-    animation-timing-function: linear;
+    animation : spinner 8s linear;   
       
 
   }
