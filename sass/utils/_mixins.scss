@@ -9,7 +9,7 @@
     }
 
     //Position absolute 
-    @mixin absolute ($top:none, $left:none, $bottom:none, $right:none){
+    @mixin absolute ($top:unset, $left:unset, $bottom:unset, $right:unset){
         position:absolute;
         top:$top;
         left:$left;
