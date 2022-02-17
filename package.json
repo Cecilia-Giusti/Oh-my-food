@@ -4,8 +4,9 @@
   "description": "Projet 3 Openclassrooms",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./public/css/style.css"
+    "sass": "sass --watch ./sass/main.scss:./public/css/style_compressed.css --style compressed"
   },
+  
   "author": "",
   "license": "ISC"
 }
