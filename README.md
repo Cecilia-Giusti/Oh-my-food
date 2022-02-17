@@ -1,5 +1,5 @@
 
-Ajout du lien vers le mail 
-Création du fichier style_compressed  
+Amélioration du loading spinner 
+Amélioration de l'animation des plats (ul) 
 
-Version: 8
+Version: 9
