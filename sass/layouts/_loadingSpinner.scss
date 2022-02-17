@@ -1,107 +1,131 @@
+@media all {
+  //Apparition de la page d'accueil
+  .spinner-opacity {
+    -webkit-animation: opacity-reverse 5s linear;
+            animation: opacity-reverse 5s linear;
+  }
 
-//Apparition de la page d'accueil
-.spinner-opacity {
-  -webkit-animation: opacity-reverse 5s linear;
-          animation: opacity-reverse 5s linear;
-}
+  // Conteneur du loading spinner
+  .container-loading{
 
-// Conteneur du loading spinner
-.container-loading{
-
-  //Dimension
-  width:100%;
-  height: 500px;
-
-  //Positionnement
-  @include flexbox;
-  @include absolute ($top:100px, $left:0);
-  
-  //Opacité
-  opacity: 0;
-
-  //Animation
-  -webkit-animation: opacity 3s ease-in-out;
-          animation: opacity 3s ease-in-out;
-}
-
-//Loading spinner
-.loader {
-
-  //Dimension
-    width:200px;
-    height: 200px;
+    //Dimension
+    width:100%;
+    height: 500px;
 
     //Positionnement
     @include flexbox;
-    position:relative;
-
-  //Bordures
-  &__spinner {
-
-    //Bordures
-    border-radius: 200px;
-    border:5px solid transparent;
-    border-top-color:$primary-color;
+    @include absolute ($top:70px, $left:0);
     
     //Opacité
     opacity: 0;
 
     //Animation
-    -webkit-animation : spinner 3s linear;
-            animation : spinner 3s linear;   
-      
-  
-    &::before {
-      content:"";
-
-      //Positionnement
-      @include absolute(10px, 10px, 10px, 10px);
-
-      //Opacité
-      opacity: 0;
-
-      //Bordure
-      border: 4px solid transparent;
-      border-top-color:#C466DA;
-      border-radius: 200px;
-
-      //Animation
-      -webkit-animation : spinner 5s linear;
-              animation : spinner 5s linear;   
-      } 
-
-    &::after {
-      content:"";
-
-      //Positionnement
-      @include absolute (25px, 25px, 25px, 25px);
-      
-      //Opacité
-      opacity: 0;
-
-      //Bordure
-      border: 3px solid transparent;
-      border-top-color:$secondary-color;
-      border-radius: 200px;
-
-      //Animation
-      -webkit-animation : spinner 8s linear;
-              animation : spinner 8s linear;   
-    }
+    -webkit-animation: opacity 3s ease-in-out;
+            animation: opacity 3s ease-in-out;
   }
 
-  &__text {
-    //Police
-    @include font($font-family:$title-font, $font-size:40px);
+  //Loading spinner
+  .loader {
 
-    //Positionnement
-    position: absolute;
+    //Dimension
+      width:200px;
+      height: 200px;
 
-    //Animation
-    -webkit-animation: spinner-text 1s linear;
-            animation: spinner-text 1s linear;
+      //Positionnement
+      @include flexbox;
+      position:relative;
+
+    //Bordures
+    &__spinner {
+
+      //Bordures
+      border-radius: 200px;
+      border:5px solid transparent;
+      border-top-color:$primary-color;
+      
+      //Opacité
+      opacity: 0;
+
+      //Animation
+      -webkit-animation : spinner 3s linear;
+              animation : spinner 3s linear;   
+        
+    
+      &::before {
+        content:"";
+
+        //Positionnement
+        @include absolute(10px, 10px, 10px, 10px);
+
+        //Opacité
+        opacity: 0;
+
+        //Bordure
+        border: 4px solid transparent;
+        border-top-color:#C466DA;
+        border-radius: 200px;
+
+        //Animation
+        -webkit-animation : spinner 5s linear;
+                animation : spinner 5s linear;   
+        } 
+
+      &::after {
+        content:"";
+
+        //Positionnement
+        @include absolute (25px, 25px, 25px, 25px);
+        
+        //Opacité
+        opacity: 0;
+
+        //Bordure
+        border: 3px solid transparent;
+        border-top-color:$secondary-color;
+        border-radius: 200px;
+
+        //Animation
+        -webkit-animation : spinner 8s linear;
+                animation : spinner 8s linear;   
+      }
+    }
+
+    &__text {
+      //Police
+      @include font($font-family:$title-font, $font-size:20px);
+
+      //Positionnement
+      position: absolute;
+
+      //Animation
+      -webkit-animation: spinner-text 1s linear;
+              animation: spinner-text 1s linear;
+    }
   }
 }
 
+@media (min-width:500px) {
+  .container-loading{  
+    top:100px;
+  }
 
+  .loader {
+      width:300px;
+      height: 300px;
 
+      &__text {
+        font-size: 30px;
+      }
+  }
+}
+
+@media (min-width:1000px){
+  .loader {
+      width:350px;
+      height: 350px;
+
+      &__text {
+        font-size: 40px;
+      }
+  }
+}
