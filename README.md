@@ -1,5 +1,5 @@
 
-Ajout du loading spinner
-Refactorisation du code 
+Ajout du lien vers le mail 
+Création du fichier style_compressed  
 
-Version: 7
+Version: 8

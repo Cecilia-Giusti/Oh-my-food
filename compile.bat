@@ -1,1 +1,0 @@
-sass --style=compressed ./sass/main.scss:./public/css/style_compressed.css
