@@ -18,9 +18,8 @@
         // Position
         position:relative;
 
-        // Animation
-        -webkit-animation: apparition 2000ms;
-            animation: apparition 2000ms;
+        
+            
 
         // Fond de l'animation
         &::before{
@@ -87,6 +86,9 @@
     
         // Contenu des items    
         &-body{
+            
+            //Animation
+            transition-duration: 500ms;
 
             //Position
             @include flexbox($justify-content:space-between);

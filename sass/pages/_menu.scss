@@ -129,6 +129,27 @@
         padding-bottom:40px;
         width:90%;
         margin:auto;
+        
+        // Animation
+
+        &--delay1 {
+            -webkit-animation: apparition 1000ms nth($time, 1) backwards;
+            animation: apparition 1000ms nth($time, 1) backwards;
+        }
+
+         &--delay2 {
+           -webkit-animation: apparition nth($time, 2) backwards;
+            animation: apparition 1000ms nth($time, 2) backwards;
+            
+         }
+
+         &--delay3 {
+             -webkit-animation: apparition nth($time, 3 ) backwards;
+             animation: apparition 1000ms nth($time, 3) backwards;
+            
+         }
+
+
     }
 
     .art-dish__button--position {
