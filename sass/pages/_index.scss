@@ -152,34 +152,17 @@ main {
         //Police
         @include font($font-size:0.9em, $font-weight:500);
     
-        // Transition au survol 
-        &:hover {
+        // Element violet  
+        &--purple {
+        
             i {
                 color:$primary_color;
             }
 
-            &::after{
-                opacity:1;
-            }
-        }
+             //Couleur
+             background-color:lighten($primary_color,35%);
 
-        &::after {
-            content:"";
-
-            //Opacité
-            opacity:0;
-
-            //Couleur
-            background-color:lighten($primary_color,35%);
-
-            //Position
-            @include absolute (0, 0, 0, 0);
-            z-index: -1;
-
-            //Bordure
-            border-radius: 15px;
-
-            //Ombre portée
+             //Ombre portée
             @include boxshadow($box-shadow:4px 5px 20px 0px rgba(0, 0, 0, 0.158) );
         }
 
@@ -267,10 +250,6 @@ main {
             @include flexbox($flex-direction:row);
             flex-wrap: wrap;
             gap:40px;
-        }
-
-        .list__item {
-            background-color:$light_color;
         }
 }
 
