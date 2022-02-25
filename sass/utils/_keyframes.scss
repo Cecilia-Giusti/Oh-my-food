@@ -1,0 +1,173 @@
+// Keyframes 
+
+  // Check des menus
+
+    //Rotation 
+    @-webkit-keyframes rotate_check {
+        0% {
+          transform: translateX(100%) rotate(-1turn);
+          }
+
+        100%{
+          transform: translateX(0%) rotate(0turn) ;
+        }
+      }
+
+      @keyframes rotate_check {
+        0% {
+          transform: translateX(100%) rotate(-1turn);
+        }
+
+        100%{
+          transform: translateX(0%) rotate(0turn) ;
+        }
+      }
+
+    // Apparition 
+    @-webkit-keyframes apparition {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+  @keyframes apparition {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    50%{
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  //Loading spinner
+
+    // Rotation des bordures
+      @-webkit-keyframes spinner {
+        0%{
+          transform: rotate(0turn);
+          opacity: 1;
+        }
+
+        100%{
+        transform: rotate(3turn);
+        }
+      }
+
+      @keyframes spinner {
+        0%{
+          transform: rotate(0turn);
+          opacity: 1;
+        }
+
+        100%{
+        transform: rotate(3turn);
+        }
+      }
+
+    // Rotation du texte 
+
+      @-webkit-keyframes spinner-text  {
+        0% {
+          transform: scaleY(0);
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+
+      @keyframes spinner-text  {
+        0% {
+          transform: scaleY(0);
+          opacity: 1;
+        }
+
+        90% {
+          opacity: 1;
+          transform: scaleY(1);
+        }
+      }
+
+      // Opacité du conteneur du spinner 
+        @-webkit-keyframes opacity {
+          0%{
+            opacity: 1;
+          }
+
+          100% {
+            opacity: 0;
+          }
+        }
+
+        @keyframes opacity {
+          0%{
+            opacity: 1;
+          }
+
+          100% {
+            opacity: 0;
+          }
+        }
+
+      // Opacité du site 
+
+        @-webkit-keyframes opacity-reverse {
+          0% {
+            opacity: 0;
+          }
+
+          50%{
+            opacity:0 ;
+          }
+
+          70%{
+            opacity: 0.8;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
+        @keyframes opacity-reverse {
+          0% {
+            opacity: 0;
+          }
+
+          50%{
+            opacity:0 ;
+          }
+          70%{
+            opacity: 0.8;
+          }
+
+          100% {
+            opacity: 1;
+          }
+        }
+
+
+
+    
+
+
+
+
+
