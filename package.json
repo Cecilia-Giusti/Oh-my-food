@@ -6,7 +6,9 @@
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style_compressed.css --style compressed"
   },
-  
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.59.3"
+  }
 }

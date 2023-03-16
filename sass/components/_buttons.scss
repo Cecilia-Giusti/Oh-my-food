@@ -1,118 +1,76 @@
-
-/*Bouton principal */
 .btn-main {
+    color: $light_color;
+    background: $gradient;
+    cursor: pointer;
+    @include boxshadow($box-shadow: 2px 5px 6px rgba(0, 0, 0, 0.26));
+    border-radius: $btn-main__border;
+    border: none;
+    @include font($font-size: 0.8em, $font-weight: 400);
+    padding: 15px 18px 15px 18px;
+    position: relative;
+    z-index: 1;
 
-    //Bouton normal 
-
-        //Couleurs
-        color :$light_color;
-        background: $gradient;
-
-        //Ombre portée
-        @include boxshadow($box-shadow:2px 5px 6px rgba(0, 0, 0, 0.26) );
-
-        //Bordures
-        border-radius: $btn-main__border;
-        border:none;
-
-        //Polices
-        @include font($font-size:0.8em, $font-weight: 400);
-
-        //Padding 
-        padding:15px 18px 15px 18px;
-
-        //Position
-        position:relative;
-        z-index: 1;
-
-        // Transition au survol 
-        &:hover {
-            &::after{
-                opacity:1;
-            }
-        }
-
-        //Bouton au survol
-        &::after { 
-            content:"";
-
-            //Position 
-            @include absolute(0,0,0,0);
-            z-index: -1;
-
-            //Couleurs et opacité
-            background:$gradient_light;
-            opacity: 0;
-            
-            //Bordures
-            border-radius: $btn-main__border;
-
-            // Ombre portée
-            @include boxshadow;
+    &:hover {
+        &::after {
+            opacity: 1;
         }
     }
+
+    &::after {
+        content: "";
+        @include absolute(0, 0, 0, 0);
+        z-index: -1;
+        background: $gradient_light;
+        opacity: 0;
+        border-radius: $btn-main__border;
+        @include boxshadow;
+    }
+}
 
 
 /*Bouton coeur */
 .btn {
-
-    // Position 
     @include flexbox;
-
-    //Image du curseur
     cursor: pointer;
-    
-   //Animation au survol
-    &:hover{
 
-        //Couleur du coeur avec bordure
+    &:hover {
         .btn__heart--border {
-            background:$gradient;
-            -webkit-background-clip:text;
-                background-clip:text;
-            color:transparent;
-        } 
-
-        //Remplissage du coeur 
+            background: $gradient;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
         .btn__heart--full {
-            transform:scale(1);  
+            transform: scale(1);
         }
     }
-    //Position des coeurs et tailles 
+
     &__heart {
-        width:22px;
+        width: 22px;
         height: 22px;
         text-align: center;
-        padding:5px 5px 0px 5px;
+        padding: 5px 5px 0px 5px;
 
         &--position {
-            @include absolute($bottom:30px, $right:30px);
+            @include absolute($bottom: 30px, $right: 30px);
         }
 
         &--menu-position {
-            @include absolute($right:20px);
+            @include absolute($right: 20px);
         }
 
-        //Coeur rempli
         &--full {
-           
-            //Couleur du coeur en dégradé
-            background:$gradient;
-            background-clip:text;
-            -webkit-background-clip:text;
-            color:transparent;
-
-            //Animation
+            background: $gradient;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
             transform: scale(0);
             transition: transform 500ms ease-in-out;
-            }
+        }
 
-            //Coeur avec bordure
-            &--border {
+        &--border {
             transform-origin: bottom;
             transition: color 800ms ease-in-out;
-            }
         }
     }
-
-
+}

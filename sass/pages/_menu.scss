@@ -1,136 +1,74 @@
-
-/* Page menu */
 @media all {
-
-    /* Corps de la page */
-
     .main-menu {
-        //Dimension
         width: $tall_dimension;
-
-        //Couleur
         background-color: $background_color_light;
 
-        /* Images du restaurant */
         &__img {
-
-            //Dimension
             width:100%;
             height:300px;
             max-height:400px;
-
-            //Image
             overflow: hidden;
-            
-            //Positionnement
             z-index:-1;
 
             img {
-
-                //Dimension
                 width:100%;
                 height:300px;
                 max-height:400px;
-
-                //Positionnement
                 z-index:-1;
-
-                //Image
                 -o-object-fit: cover;
                 object-fit: cover;
             }
         }
     }    
 
-    /* Section du menu*/
     .section-menu {
-
-        //Positionnement
         @include flexbox($flex-direction:column, $align-items:flex-start);
         z-index:1;
         position:relative;
-
-        //Couleur
         background-color: $background_color_light;
-
-        //Bordure
         border-radius : 30px 30px 0 0 ;
-        
-        //Dimension
         bottom:30px;
 
-        /*Nom du restaurant*/
         &__title {
-            //Positionnement
             @include flexbox($justify-content:space-between, $flex-direction:row);
             position:relative;
-
-            //Dimension
             width:90%;
             margin:auto;
 
             h5{
-
-                //Police
                 @include font($font-family:$title_font, $font-size:1.5em, $font-weight: 400);
-
-                //Dimension
                 width: 80%;
             }
         }
     }
 
-    /*Section du menu*/
     .section-dish {
         width:90%;
         margin:auto;
-
-        /* Titre, entrées plats et desserts*/
         h6{
-            //Police
             @include font($font-size:1em, $font-weight:400);
             text-transform: uppercase;
-
-            //Dimension
             margin: 0 0 0 0;
-
-            //Position
             position:relative;
 
-
-            /* Trait de décoration sous le titre*/
             &::after {
                 content: "";
-
-                //Position
                 @include absolute ($top:20px, $right:0, $bottom:0, $left:0);
-                
-                //Dimension
                 width:40px;
                 height:3px;
-
-                //Couleur
                 background-color: $tertiary_color;  
             }
         }
     }
 
-    /* Liste des plats*/
     .dish-list {
-        //Positionnement
         @include flexbox($flex-direction: column);
         gap:20px;
-
-        //Style des puces
         list-style: none;
-
-        //Dimension
         padding-top:20px;
         padding-bottom:40px;
         width:90%;
         margin:auto;
-        
-        // Animation
 
         &--delay1 {
             -webkit-animation: apparition 1000ms nth($time, 1) backwards;
@@ -149,14 +87,15 @@
             
          }
 
+         &__item{
+            cursor: pointer;
+         }
+
 
     }
 
     .art-dish__button--position {
-        //Positionnement 
         text-align: center;
-
-        //Dimension
         width:100%;
 
         button{
@@ -173,8 +112,6 @@
 
         h6 {
             text-align: center;
-
-            /* Trait de décoration sous le titre*/
             &::after {
                 width:100%;
             }

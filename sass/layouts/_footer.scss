@@ -1,25 +1,13 @@
-/*Footer */
 @media all{
     footer {
-        //Couleurs
         background-color: $background_color_footer;
-
-        //Dimension
         width:$tall_dimension;
         box-sizing: border-box;
-
-        //Positionnement
         @include flexbox($align-items:flex-start, $flex-direction:column);
         
         .footer__logo {
-
-            //Couleurs
             color: $light_color;
-
-            //Police
             @include font($font-size:1.2em, $font-weight: 400, $font-family:$title_font);
-
-            //Dimension
             margin: 20px 0 10px 20px;
         }
 
@@ -47,7 +35,6 @@
 
 @media (min-width:500px) {
     footer {
-        //Positionnement
         @include flexbox;
         gap: 50px;
 
@@ -64,10 +51,7 @@
 
 @media (min-width:1000px) {
     ul {
-        //Positionnement
         @include flexbox($justify-content:space-around);
-
-        //Dimension
         width: 80%;
 
         li {
