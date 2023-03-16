@@ -1,224 +1,140 @@
 @media all {
-    
-    // Items des menus
     .dish-list__item {
-        //Couleurs 
         background-color: $light_color;
-
-        // Dimensions 
-        width:$tall_dimension;
-        padding:15px;
-
-        // Bordures    
+        width: $tall_dimension;
+        padding: 15px;
         border-radius: 20px 20px 20px 20px;
+        @include boxshadow($box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+        position: relative;
 
-        //Ombre portée
-        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
-
-        // Position
-        position:relative;
-
-        
-            
-
-        // Fond de l'animation
-        &::before{
-            content:"";
-
-            //Position 
-            @include absolute ($top:0, $bottom:0, $right:0);
-
-            //Couleurs
+        &::before {
+            content: "";
+            @include absolute ($top: 0, $bottom: 0, $right: 0);
             background-color: $tertiary_color;
-
-            //Bordures
             border-radius: 0px 20px 20px 0px;
-
-            //Dimensions
-            width:80px;
-
-            // Transformation
+            width: 80px;
             transform-origin: right;
-            transform : scaleX(0);
+            transform: scaleX(0);
             transition: transform 300ms ease-in-out;
         }
 
-        // Animation au survol
         &:hover {
 
-            // Décalage du texte
-            .dish-list__item-body {
-                // Dimension
-                width:75%;
-                gap:10px;
-                margin-right:10px;
 
-                // Animation
+            .dish-list__item-body {
+                width: 75%;
+                gap: 10px;
+                margin-right: 10px;
                 transition-duration: 300ms;
             }
 
-            //Animation du fond 
-            &::before{
-                transform : scaleX(1)
+
+            &::before {
+                transform: scaleX(1)
             }
 
-            //Ajout du check 
             &::after {
-
-                //Icone check
-                content:"\f058";
+                content: "\f058";
                 font-family: "Font Awesome 5 Free";
                 text-align: center;
                 font-weight: 900;
-                font-size:1.5em;
-
-                //Couleur
-                color:$light_color;
-
-                //Position
-                @include absolute ($top:30px, $right:30px);
-
-                //Animation
+                font-size: 1.5em;
+                color: $light_color;
+                @include absolute ($top: 30px, $right: 30px);
                 -webkit-animation: rotate_check 400ms;
-                    animation: rotate_check 400ms;
+                animation: rotate_check 400ms;
             }
         }
-    
-        // Contenu des items    
-        &-body{
-            
-            //Animation
+
+        &-body {
             transition-duration: 500ms;
-
-            //Position
-            @include flexbox($justify-content:space-between);
+            @include flexbox($justify-content: space-between);
             flex-wrap: nowrap;
-
-            // Dimension
-            width:$tall_dimension;
+            width: $tall_dimension;
         }
 
-        p{
-            margin:5px 0 5px 0;
+        p {
+            margin: 5px 0 5px 0;
         }
 
         &-p {
-
-            // Dimension
-            width:100%;
-
-            //Agencement du texte
+            width: 100%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            
-            //Texte en gras
-            &--bold {
-                    font-weight: 800;
-                    align-self: flex-end;
-                }
 
-            // Texte régulier
+            &--bold {
+                font-weight: 800;
+                align-self: flex-end;
+            }
+
             &--regular {
-                font-size:0.9em;
+                font-size: 0.9em;
             }
         }
     }
 }
 
-@media (min-width:500px){
-
-    // Items des menus au survol
+@media (min-width:500px) {
     .dish-list__item:hover {
-
-        // Contenu des items
-        .dish-list__item-body
-        {
-            width:80%;
+        .dish-list__item-body {
+            width: 80%;
         }
     }
 }
 
-@media (min-width:700px){
-
-    // Items des menus au survol
+@media (min-width:700px) {
     .dish-list__item:hover {
-
-        // Contenu des items
-        .dish-list__item-body
-        {
-            width:85%;
+        .dish-list__item-body {
+            width: 85%;
         }
     }
 }
 
-@media (min-width:1000px){
+@media (min-width:1000px) {
 
-    // Items des menus
+
     .dish-list__item {
-
-        //Position
-        @include flexbox ($flex-direction:column);
+        @include flexbox ($flex-direction: column);
         text-align: center;
-
-        //Dimension
-        width:30%;
-        
-        //Animation
+        width: 30%;
         transition: transform 200ms ease-in-out;
 
-        // Fond du check
-        &::before {
-            //Dimension
-            width:100%;
 
-            //Bordure
+        &::before {
+            width: 100%;
             border-radius: 20px 20px;
         }
 
-        //Survol
         &:hover {
 
-            // Contenu des items
+
             .dish-list__item-body {
-
-                //Dimension
                 width: auto;
-                margin-right:0;
-
-                //Position
-                gap:0;
+                margin-right: 0;
+                gap: 0;
                 z-index: 1;
-
-                //Animarion
                 transition-duration: 300ms;
             }
 
-            //Check
             &::after {
-
-                //Position
-                right:20px;
-                bottom:10px;
-                left:inherit;
-                top:inherit;
-            }    
+                right: 20px;
+                bottom: 10px;
+                left: inherit;
+                top: inherit;
+            }
         }
-         
-        // Contenu des items
+
         &-body {
-            //Positionnement
-            @include flexbox ($flex-direction:column);
+            @include flexbox ($flex-direction: column);
         }
 
 
-        &-p{
-            //Aménagement du texte
+        &-p {
             white-space: inherit;
             overflow: inherit;
             text-overflow: inherit;
 
-            // Texte gras    
             &--bold {
                 align-self: auto;
             }

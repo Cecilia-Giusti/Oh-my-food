@@ -1,233 +1,159 @@
-/*Page d'accueil */
-
 main {
-    width:$tall_dimension;
+    width: $tall_dimension;
 }
 
-/*Premiere section  */
-
-.presentation{
-    @include flexbox($flex-direction:column);
-    width:$tall_dimension;
+.presentation {
+    @include flexbox($flex-direction: column);
+    width: $tall_dimension;
 }
 
 
 @media all {
-
-    /*Localisation */
     .location {
-
-        //Couleur
         background-color: $background_color_medium;
-
-        //Position
         @include flexbox;
-        gap:10px;
+        @include font($font-size: 1em, $font-weight: 600);
+        width: $tall_dimension;
 
-        //Police
-        @include font($font-size:1em, $font-weight:600);
-
-        //Dimension
-        width:$tall_dimension;
-
-        p {
+        input {
             margin: 15px 0 15px 0;
+            border: none;
+            background-color: transparent;
+            text-align: center;
+            padding: 0;
+
         }
     }
 
-    }
+}
 
 @media (min-width: 1400px) {
     .location {
-        width:50%;
+        width: 50%;
         max-width: 500px;
     }
 }
 
-
-
-/*Présentation */
-@media all{
+@media all {
     .section-presentation {
-
-        //Dimension
-        width:$tall_dimension;
+        width: $tall_dimension;
         padding: 40px 0 40px 0;
-
-        //Couleur
         background-color: $background_color_light;
-
-        //Positionnement
         text-align: center;
-        
+
         h2 {
-
-            //Dimension
-            margin:auto;
-            margin-top:0;
-            width:70%;
-
-            //Police
-            @include font($font-size: 1.3em, $font-weight:900);
+            margin: auto;
+            margin-top: 0;
+            width: 70%;
+            @include font($font-size: 1.3em, $font-weight: 900);
         }
 
         p {
-            //Couleur
             color: $background_color_footer;
-
-            //Dimension
-            width:80%;
-            margin:auto;
-            padding:20px 0 30px 0;
+            width: 80%;
+            margin: auto;
+            padding: 20px 0 30px 0;
         }
     }
 }
 
 @media (min-width: 1000px) {
-    .section-presentation{
-        //Dimension
+    .section-presentation {
         height: 300px;
+        @include flexbox($flex-direction: column);
+        gap: 10px;
 
-        //Position
-        @include flexbox($flex-direction:column);
-        gap:10px;
-
-        h2, p{
-            margin:0;
+        h2,
+        p {
+            margin: 0;
         }
     }
 }
 
-/*Fonctionnement */
 @media all {
     aside {
-        width:90%;
-        margin:auto;
+        width: 90%;
+        margin: auto;
 
         h3 {
-            @include font ($font-size:1.4em);
+            @include font ($font-size: 1.4em);
         }
-}
+    }
 
-/*Etapes du fonctionnement du site*/
+    .list {
+        @include flexbox($flex-direction: column);
+        gap: 20px;
+        margin: auto;
+        margin-bottom: 40px;
+        width: 80%;
+        padding: 0px;
+        list-style: none;
 
-.list {
-    //Positionnement
-    @include flexbox($flex-direction:column);
-    gap: 20px;
+        &__item {
+            height: 25px;
+            width: $tall_dimension;
+            max-width: 250px;
+            padding: 20px 18px 20px 18px;
+            @include flexbox($justify-content: flex-start);
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+            background-color: $background_color_light;
+            border-radius: 15px;
+            @include boxshadow($box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+            @include font($font-size: 0.9em, $font-weight: 500);
 
-    //Dimension
-    margin:auto;
-    margin-bottom:40px;
-    width:80%;
-    padding: 0px;
+            &--purple {
 
-    //Style des puces
-    list-style: none;
-    
-    //items de la liste
-    &__item { 
+                i {
+                    color: $primary_color;
+                }
 
-        //Dimension
-        height: 25px;
-        width:$tall_dimension;
-        max-width: 250px;
-        padding:20px 18px 20px 18px;
-
-        //Positionnement
-        @include flexbox($justify-content:flex-start);
-        gap:20px;
-        position :relative;
-        z-index: 1;
-
-        //Couleur
-        background-color: $background_color_light;
-        
-        //Bordure
-        border-radius: 15px;
-
-        //Ombre portée
-        @include boxshadow( $box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
-
-        //Police
-        @include font($font-size:0.9em, $font-weight:500);
-    
-        // Element violet  
-        &--purple {
-        
-            i {
-                color:$primary_color;
+                background-color:lighten($primary_color, 35%);
+                @include boxshadow($box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
             }
 
-             //Couleur
-             background-color:lighten($primary_color,35%);
-
-             //Ombre portée
-            @include boxshadow($box-shadow:4px 5px 20px 0px rgba(0, 0, 0, 0.158) );
+            &--circle {
+                width: 22px;
+                height: 22px;
+                font-size: 0.8em;
+                border-radius: 50%;
+                background-color: $primary_color;
+                color: $light_color;
+                @include flexbox;
+                @include absolute($top: 22px, $left: -10px);
+            }
         }
-
-        //cercle autour des chiffres
-        &--circle{ 
-            //Dimension
-            width: 22px;
-            height: 22px;
-            font-size: 0.8em;
-
-            //Bordure
-            border-radius: 50%;
-
-            //Couleurs
-            background-color: $primary_color;
-            color:$light_color;
-
-            //Positionnement
-            @include flexbox;
-            @include absolute($top:22px, $left:-10px);
-        } 
     }
-}
 
 }
 
 @media (min-width: 500px) {
 
     .list {
-        //Dimension
         width: $tall_dimension;
-
-        //Positionnement
-        @include flexbox ($justify-content:space-around, $flex-direction:row);
+        @include flexbox ($justify-content: space-around, $flex-direction: row);
         flex-wrap: wrap;
     }
 }
 
 @media (min-width: 1000px) {
     .presentation {
-        @include flexbox ($flex-direction:row);
-        flex-wrap : wrap;
+        @include flexbox ($flex-direction: row);
+        flex-wrap: wrap;
     }
 
     .location {
-        //Positionnement
         order: 2;
-
-        //Dimension
-        width:30%;
-        margin-left:10%;
-
-        //Bordure
+        width: 30%;
+        margin-left: 10%;
         border-radius: 30px;
-
-        //Ombre portée
         box-shadow: inset 2px 5px 6px rgba(0, 0, 0, 0.13);
     }
 
     aside {
-        //Positionnement
-        order:3;
-
-        //Dimension
-        width:40%;
+        order: 3;
+        width: 40%;
 
         h3 {
             text-align: center;
@@ -235,11 +161,8 @@ main {
     }
 
     .list {
-        //Dimension
         width: $tall_dimension;
-
-        //Positionnement
-        @include flexbox($flex-direction:column);
+        @include flexbox($flex-direction: column);
         flex-wrap: nowrap;
     }
 }
@@ -247,121 +170,83 @@ main {
 
 @media (min-width: 1400px) {
     .list {
-            @include flexbox($flex-direction:row);
-            flex-wrap: wrap;
-            gap:40px;
-        }
+        @include flexbox($flex-direction: row);
+        flex-wrap: wrap;
+        gap: 40px;
+    }
 }
 
-/* Section des restaurants */
 @media all {
 
     .section-restaurants {
-        //Dimension
         width: $tall_dimension;
-        padding:40px 0px 40px;
-
-        //Couleur
+        padding: 40px 0px 40px;
         background-color: $background_color_light;
-        
-        //Nom du restaurant
+
         h3 {
             @include font;
-            margin-left:5%;
+            margin-left: 5%;
         }
 
         &--flex {
-            @include flexbox($flex-direction:column);
-            gap:20px;
+            @include flexbox($flex-direction: column);
+            gap: 20px;
         }
     }
 
-    /* Cartes des restaurants */
-
-    .art-restaurant{
-        //Dimension
-        width:90%;
+    .art-restaurant {
+        width: 90%;
         max-width: 350px;
-        margin:auto;
-
-        //Couleur
+        margin: auto;
         background-color: $light_color;
-
-        //Bordure
-        border-radius : 20px 20px 20px 20px;
-
-        //Position
-        position:relative;
-
-        //Ombre portée
-        @include boxshadow($box-shadow:4px 5px 20px 0px rgba(0, 0, 0, 0.158));
+        border-radius: 20px 20px 20px 20px;
+        position: relative;
+        @include boxshadow($box-shadow: 4px 5px 20px 0px rgba(0, 0, 0, 0.158));
 
         &:hover {
-            //Ombre portée
             @include boxshadow;
-
-            //Opacité
             opacity: 90%;
         }
 
-        a{
+        a {
             text-decoration: none;
             color: $dark_color;
         }
 
 
         &__img {
-            //Positionnement
             @include flexbox;
-
-            //Bordure
-            border-radius : 20px 20px 0px 0px;
-
-            //Image
+            border-radius: 20px 20px 0px 0px;
             overflow: hidden;
             height: 150px;
 
             img {
-                //Dimension
-                width:$tall_dimension;
-
-                //Image
+                width: $tall_dimension;
                 -o-object-fit: contain;
-                    object-fit: contain;
+                object-fit: contain;
             }
         }
 
         &__new {
-            //Couleurs
             background-color: $tertiary_color;
             color: darken($tertiary_color, 40%);
-
-            //Police
-            @include font($font-size:0.8em, $font-weight: 600);
-
-            //Dimension
-            padding:8px 10px 8px 10px;
-
-            //Positionnement
-            @include absolute ($top:0, $right:10px);
-            }
+            @include font($font-size: 0.8em, $font-weight: 600);
+            padding: 8px 10px 8px 10px;
+            @include absolute ($top: 0, $right: 10px);
+        }
 
         &__body {
-            //Dimension
-            margin-top:10px;
+            margin-top: 10px;
             padding: 10px 15px 20px 15px;
+            @include flexbox($justify-content: space-between);
 
-            //Positionnement
-            @include flexbox($justify-content:space-between);
-            
-            //Nom du restaurant
             h4 {
-                @include font ($font-size:1em, $font-weight:900);
-                margin:0;
+                @include font ($font-size: 1em, $font-weight: 900);
+                margin: 0;
             }
 
             p {
-                margin:5px 0px 0px 0px;
+                margin: 5px 0px 0px 0px;
             }
         }
     }
@@ -369,42 +254,41 @@ main {
 
 @media (min-width: 500px) {
 
-    .section-restaurants{
+    .section-restaurants {
 
-        &--flex{
-            //Positionnement
+        &--flex {
             @include flexbox;
-            flex-wrap:wrap;
+            flex-wrap: wrap;
         }
 
         h3 {
             text-align: center;
-            margin-left:0;
+            margin-left: 0;
         }
     }
 
     .art-restaurant {
-        margin:0;
+        margin: 0;
 
         &__new {
-            @include font($font-size:1.2em);
-            right:15px;
+            @include font($font-size: 1.2em);
+            right: 15px;
         }
     }
 }
 
 @media (min-width: 1000px) {
-    .section-restaurants{
-        
+    .section-restaurants {
+
         &--flex {
-            width:90%;
-            gap:30px;
-            margin:auto;
+            width: 90%;
+            gap: 30px;
+            margin: auto;
         }
     }
 
     .art-restaurant {
-        width:$tall_dimension;
+        width: $tall_dimension;
         max-width: 400px;
 
         &__img {
@@ -412,5 +296,3 @@ main {
         }
     }
 }
-
-
